@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">بناسنج</string>
+    <string name="title_activity_main">بناسنج</string>
+    <string name="package_name">ir.bannasanj.app</string>
+    <string name="custom_url_scheme">ir.bannasanj.app</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "بناسنج — برآورد مصالح و هزینه دیوارچینی",
+  "description": "اپلیکیشن ساده و آفلاین ویژه بنّا، سرکارگر و مالک برای محاسبه دقیق تعداد آجر و بلوک، سیمان، ماسه و هزینه تمام‌شده دیوارچینی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
