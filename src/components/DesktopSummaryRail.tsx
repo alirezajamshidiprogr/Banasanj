@@ -1,9 +1,17 @@
 import React from 'react';
-import type {CalculationResult, CostResult, EstimateDraft, EstimateStep} from '../types';
+import type {
+  CalculationResult,
+  CostResult,
+  EstimateDraft,
+  EstimateStep,
+  MaterialPreset,
+} from '../types';
 import {formatFaNumber, formatToman, parsePositiveNumber} from '../utils/formatters';
+import {MaterialThumbnail} from './MaterialThumbnail';
 
 interface DesktopSummaryRailProps {
   draft: EstimateDraft;
+  materialPreset: MaterialPreset;
   materialDisplayName: string;
   unitLabel: string;
   step: EstimateStep;
@@ -13,6 +21,7 @@ interface DesktopSummaryRailProps {
 
 export const DesktopSummaryRail: React.FC<DesktopSummaryRailProps> = ({
   draft,
+  materialPreset,
   materialDisplayName,
   unitLabel,
   quantities,
@@ -101,9 +110,19 @@ export const DesktopSummaryRail: React.FC<DesktopSummaryRailProps> = ({
 
       {/* Live Numbers */}
       <div className="space-y-3 text-sm tabular-nums-fa">
-        <div className="flex items-center justify-between py-2 border-b border-slate-100">
+        <div className="flex items-center justify-between gap-3 py-2 border-b border-slate-100">
           <span className="text-slate-600">نوع مصالح</span>
-          <span className="font-bold text-slate-900">{materialDisplayName}</span>
+          <div className="flex items-center gap-2.5 min-w-0">
+            <MaterialThumbnail
+              material={{
+                ...materialPreset,
+                name: materialDisplayName,
+                thicknessCm: parsePositiveNumber(draft.activeDimensionsCm.t) ?? materialPreset.actualCm.t,
+              }}
+              sizeClass="w-10 h-10 rounded-xl"
+            />
+            <span className="font-bold text-slate-900 truncate">{materialDisplayName}</span>
+          </div>
         </div>
 
         <div className="flex items-center justify-between py-2 border-b border-slate-100">

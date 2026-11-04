@@ -1,11 +1,20 @@
 import React, {useState} from 'react';
-import {ArrowLeft, ArrowRight, Check, RotateCcw, SlidersHorizontal} from 'lucide-react';
-import {getPresetById, MATERIAL_PRESETS} from '../constants/materials';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  Plus,
+  RotateCcw,
+  SlidersHorizontal,
+  Trash2,
+} from 'lucide-react';
+import {getAllMaterials, getMaterialById} from '../constants/materials';
 import type {
   DimensionsCm,
   EstimateDraft,
   MaterialCategory,
   MaterialPreset,
+  MaterialUsageRecord,
   MixRatioValue,
 } from '../types';
 import {
@@ -15,14 +24,18 @@ import {
   sanitizeDecimalInput,
   toPersianDigits,
 } from '../utils/formatters';
-import {BlockIcon, BrickIcon} from './MaterialIcons';
+import {MaterialThumbnail} from './MaterialThumbnail';
 
 interface MaterialStepProps {
   draft: EstimateDraft;
+  userMaterials: MaterialPreset[];
+  usageStats: Record<string, MaterialUsageRecord>;
   presetOverrides: Record<string, DimensionsCm>;
   onChangeDraft: (updater: (prev: EstimateDraft) => EstimateDraft) => void;
   onSavePresetOverride: (presetId: string, dims: DimensionsCm) => void;
   onResetPresetOverride: (presetId: string) => void;
+  onOpenAddMaterialModal: () => void;
+  onDeleteUserMaterial: (materialId: string) => void;
   onBack: () => void;
   onNext: () => void;
 }
@@ -37,31 +50,49 @@ const MIX_RATIO_OPTIONS: Array<{value: MixRatioValue; label: string; desc: strin
 
 export const MaterialStep: React.FC<MaterialStepProps> = ({
   draft,
+  userMaterials,
+  usageStats,
   presetOverrides,
   onChangeDraft,
   onSavePresetOverride,
   onResetPresetOverride,
+  onOpenAddMaterialModal,
+  onDeleteUserMaterial,
   onBack,
   onNext,
 }) => {
-  const [filterCat, setFilterCat] = useState<'all' | MaterialCategory>('all');
-  const [showDimensionEditor, setShowDimensionEditor] = useState<boolean>(
-    draft.selectedMaterialId === 'custom'
-  );
+  const [filterCat, setFilterCat] = useState<'all' | MaterialCategory | 'user'>('all');
+  const [showDimensionEditor, setShowDimensionEditor] = useState<boolean>(false);
+  const [confirmDeleteMat, setConfirmDeleteMat] = useState<MaterialPreset | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const selectedPreset = getPresetById(draft.selectedMaterialId);
+  const allMaterials = getAllMaterials(userMaterials);
+  const selectedPreset = getMaterialById(draft.selectedMaterialId, userMaterials);
   const hasCustomOverride = Boolean(presetOverrides[selectedPreset.id]);
 
-  const filteredPresets = MATERIAL_PRESETS.filter((m) =>
-    filterCat === 'all' ? true : m.category === filterCat
-  );
+  // Smart sort: show user's custom materials at the top when viewing 'all' or 'user',
+  // and boost recently used materials cleanly
+  const filteredPresets = allMaterials
+    .filter((m) => {
+      if (filterCat === 'all') return true;
+      if (filterCat === 'user') return !m.isBuiltIn;
+      return m.category === filterCat;
+    })
+    .sort((a, b) => {
+      if (a.isBuiltIn !== b.isBuiltIn) {
+        return a.isBuiltIn ? 1 : -1; // User-defined materials shown prominently first
+      }
+      const countDiff = (usageStats[b.id]?.count ?? 0) - (usageStats[a.id]?.count ?? 0);
+      if (countDiff !== 0) return countDiff;
+      return 0;
+    });
 
   const handleSelectMaterial = (preset: MaterialPreset) => {
     const savedDims = presetOverrides[preset.id] ?? preset.actualCm;
     onChangeDraft((prev) => ({
       ...prev,
       selectedMaterialId: preset.id,
+      customMaterialName: preset.name,
       wallThicknessCm: String(preset.recommendedWallThicknessCm),
       activeDimensionsCm: {
         l: String(savedDims.l),
@@ -69,9 +100,6 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
         t: String(savedDims.t),
       },
     }));
-    if (preset.id === 'custom') {
-      setShowDimensionEditor(true);
-    }
     setErrorMsg(null);
   };
 
@@ -82,7 +110,7 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
       const lNum = parsePositiveNumber(nextDims.l);
       const hNum = parsePositiveNumber(nextDims.h);
       const tNum = parsePositiveNumber(nextDims.t);
-      if (lNum && hNum && tNum && prev.selectedMaterialId !== 'custom') {
+      if (lNum && hNum && tNum) {
         onSavePresetOverride(prev.selectedMaterialId, {l: lNum, h: hNum, t: tNum});
       }
       return {
@@ -124,7 +152,9 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
       return;
     }
     if (!joint) {
-      setErrorMsg('لطفاً ضخامت بند ملات را به صورت عدد مثبت (مثلاً ۲ یا ۱٫۵ سانتی‌متر) وارد کنید.');
+      setErrorMsg(
+        'لطفاً ضخامت بند ملات را به صورت عدد مثبت (مثلاً ۲ یا ۱٫۵ سانتی‌متر) وارد کنید.'
+      );
       return;
     }
     if (waste === null || waste > 100) {
@@ -138,147 +168,192 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Material Preset Selection */}
+      {/* Material Preset & User Materials Selection */}
       <section className="rounded-2xl bg-white border border-slate-200 p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h2 className="text-lg font-bold text-slate-900">۱. نوع آجر یا بلوک</h2>
+            <h2 className="text-lg font-bold text-slate-900">۱. انتخاب آجر یا بلوک</h2>
             <p className="text-sm text-slate-600 mt-0.5">
-              مصالح دیوار را انتخاب کنید. ابعاد استاندارد و واقعی هر مصالح قابل ویرایش است.
+              مصالح ثابت استاندارد قابل حذف نیستند؛ می‌توانید مصالح جدید با ابعاد دلخواه اضافه کنید تا برای همیشه بماند.
             </p>
           </div>
 
-          {/* Interactive Filter Controls */}
-          <div className="flex items-center gap-1 p-1 bg-slate-100 rounded-xl self-start">
-            {(
-              [
-                {id: 'all', label: 'همه'},
-                {id: 'brick', label: 'آجر'},
-                {id: 'block', label: 'بلوک'},
-                {id: 'custom', label: 'سفارشی'},
-              ] as const
-            ).map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setFilterCat(tab.id)}
-                className={`min-h-[40px] px-3.5 py-1.5 rounded-lg text-sm font-semibold transition whitespace-nowrap shrink-0 cursor-pointer ${
-                  filterCat === tab.id
-                    ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <button
+            type="button"
+            onClick={onOpenAddMaterialModal}
+            className="min-h-[44px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+          >
+            <Plus className="w-4 h-4" />
+            <span>معرفی مصالح جدید</span>
+          </button>
         </div>
 
-        {/* Presets Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {filteredPresets.map((preset) => {
-            const isSelected = draft.selectedMaterialId === preset.id;
-            const currentActual = presetOverrides[preset.id] ?? preset.actualCm;
+        {/* Interactive Filter Controls */}
+        <div className="flex items-center gap-1 p-1 bg-slate-100 rounded-xl overflow-x-auto">
+          {(
+            [
+              {id: 'all', label: 'همه مصالح'},
+              {id: 'brick', label: 'آجر و سفال'},
+              {id: 'block', label: 'بلوک'},
+              {
+                id: 'user',
+                label:
+                  userMaterials.length > 0
+                    ? `مصالح من (${formatFaNumber(userMaterials.length, 0)})`
+                    : 'مصالح من',
+              },
+            ] as const
+          ).map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setFilterCat(tab.id)}
+              className={`min-h-[40px] flex-1 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition whitespace-nowrap shrink-0 cursor-pointer ${
+                filterCat === tab.id
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
-            return (
-              <button
-                key={preset.id}
-                type="button"
-                onClick={() => handleSelectMaterial(preset)}
-                className={`text-right rounded-2xl p-4 border transition flex items-start justify-between gap-3 cursor-pointer ${
-                  isSelected
-                    ? 'border-blue-700 bg-blue-50/50 ring-1 ring-blue-700'
-                    : 'border-slate-200 bg-white hover:border-slate-300'
-                }`}
-              >
-                <div className="flex items-start gap-3 min-w-0">
-                  <div
-                    className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${
-                      isSelected ? 'bg-blue-700 text-white' : 'bg-slate-100 text-slate-700'
-                    }`}
-                  >
-                    {preset.category === 'block' ? (
-                      <BlockIcon className="w-6 h-6" />
-                    ) : (
-                      <BrickIcon className="w-6 h-6" />
-                    )}
-                  </div>
+        {/* Empty state when user clicks 'مصالح من' before adding any */}
+        {filteredPresets.length === 0 ? (
+          <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 text-center space-y-3">
+            <p className="text-sm font-semibold text-slate-700">
+              هنوز مصالح اختصاصی جدیدی معرفی نکرده‌اید.
+            </p>
+            <button
+              type="button"
+              onClick={onOpenAddMaterialModal}
+              className="min-h-[46px] px-5 rounded-xl bg-blue-700 hover:bg-blue-600 text-white text-sm font-bold inline-flex items-center gap-1.5 cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              <span>افزودن اولین مصالح اختصاصی</span>
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {filteredPresets.map((preset) => {
+              const isSelected = draft.selectedMaterialId === preset.id;
+              const currentActual = presetOverrides[preset.id] ?? preset.actualCm;
+              const usedCount = usageStats[preset.id]?.count ?? 0;
 
-                  <div className="min-w-0 space-y-1">
-                    <div className="font-bold text-base text-slate-900">{preset.name}</div>
-                    <p className="text-xs text-slate-600">{preset.subtitle}</p>
-                    {preset.id !== 'custom' ? (
+              return (
+                <div
+                  key={preset.id}
+                  onClick={() => handleSelectMaterial(preset)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSelectMaterial(preset);
+                    }
+                  }}
+                  className={`text-right rounded-2xl p-3.5 border transition flex items-start justify-between gap-3 cursor-pointer ${
+                    isSelected
+                      ? 'border-blue-700 bg-blue-50/50 ring-1 ring-blue-700'
+                      : 'border-slate-200 bg-white hover:border-slate-300'
+                  }`}
+                >
+                  <div className="flex items-start gap-3.5 min-w-0">
+                    {/* Real Studio Photo Thumbnail (bricks & blocks only) */}
+                    <MaterialThumbnail
+                      material={{
+                        ...preset,
+                        thicknessCm: currentActual.t,
+                      }}
+                      sizeClass="w-16 h-16 rounded-2xl"
+                    />
+
+                    <div className="min-w-0 space-y-1">
+                      <div className="font-bold text-base text-slate-900 leading-snug">
+                        {preset.name}
+                      </div>
+
+                      <div className="text-[11px] text-slate-500 flex flex-wrap items-center gap-1">
+                        <span>{preset.isBuiltIn ? 'مصالح ثابت استاندارد' : 'مصالح ثبت‌شده شما'}</span>
+                        {usedCount > 0 && (
+                          <>
+                            <span aria-hidden="true">·</span>
+                            <span className="text-blue-700 font-medium">پراستفاده شما</span>
+                          </>
+                        )}
+                      </div>
+
                       <div className="text-xs text-slate-500 pt-0.5 space-y-0.5 tabular-nums-fa">
-                        <div>
-                          ابعاد اسمی: {formatFaNumber(preset.nominalCm.l, 1)}×
-                          {formatFaNumber(preset.nominalCm.h, 1)}×
-                          {formatFaNumber(preset.nominalCm.t, 1)} سانتی‌متر
-                        </div>
-                        <div className="text-slate-700 font-medium">
+                        {preset.isBuiltIn && (
+                          <div>
+                            اسمی: {formatFaNumber(preset.nominalCm.l, 1)}×
+                            {formatFaNumber(preset.nominalCm.h, 1)}×
+                            {formatFaNumber(preset.nominalCm.t, 1)} سانت
+                          </div>
+                        )}
+                        <div className="text-slate-800 font-semibold">
                           ابعاد واقعی: {formatFaNumber(currentActual.l, 1)}×
                           {formatFaNumber(currentActual.h, 1)}×
-                          {formatFaNumber(currentActual.t, 1)} سانتی‌متر
+                          {formatFaNumber(currentActual.t, 1)} سانت
                         </div>
                       </div>
-                    ) : (
-                      <div className="text-xs text-slate-600 pt-0.5">
-                        وارد کردن دستی طول، ارتفاع و ضخامت
+                    </div>
+                  </div>
+
+                  {/* Right Action Column: Checkmark + Delete button ONLY for user-defined materials */}
+                  <div className="flex flex-col items-end justify-between self-stretch shrink-0">
+                    {isSelected ? (
+                      <div className="w-6 h-6 rounded-full bg-blue-700 text-white flex items-center justify-center">
+                        <Check className="w-4 h-4" />
                       </div>
+                    ) : (
+                      <div className="w-6 h-6" />
+                    )}
+
+                    {/* Strictly NO delete button on built-in presets! */}
+                    {!preset.isBuiltIn && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setConfirmDeleteMat(preset);
+                        }}
+                        aria-label={`حذف ${preset.name}`}
+                        className="min-h-[38px] min-w-[38px] -mb-1 -ml-1 rounded-xl text-slate-400 hover:text-red-600 hover:bg-red-50 flex items-center justify-center cursor-pointer"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
                     )}
                   </div>
                 </div>
+              );
+            })}
+          </div>
+        )}
 
-                {isSelected && (
-                  <div className="w-6 h-6 rounded-full bg-blue-700 text-white flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4" />
-                  </div>
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Editable Dimensions Box for Selected Preset / Custom Material */}
+        {/* Editable Dimensions Box for Selected Material */}
         <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="text-sm font-bold text-slate-900 tabular-nums-fa">
-              ابعاد محاسبه «{selectedPreset.id === 'custom' ? draft.customMaterialName || 'مصالح سفارشی' : selectedPreset.name}»:{' '}
+              ابعاد محاسبه «{selectedPreset.name}»:{' '}
               {toPersianDigits(draft.activeDimensionsCm.l)} ×{' '}
               {toPersianDigits(draft.activeDimensionsCm.h)} ×{' '}
               {toPersianDigits(draft.activeDimensionsCm.t)} سانتی‌متر
             </div>
 
-            {selectedPreset.id !== 'custom' && (
-              <button
-                type="button"
-                onClick={() => setShowDimensionEditor((v) => !v)}
-                className="min-h-[44px] px-3 rounded-lg text-sm font-semibold text-blue-700 hover:bg-blue-50 flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
-              >
-                <SlidersHorizontal className="w-4 h-4" />
-                <span>{showDimensionEditor ? 'بستن ویرایش ابعاد' : 'ویرایش ابعاد این مصالح'}</span>
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => setShowDimensionEditor((v) => !v)}
+              className="min-h-[42px] px-3 rounded-lg text-sm font-semibold text-blue-700 hover:bg-blue-50 flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+            >
+              <SlidersHorizontal className="w-4 h-4" />
+              <span>{showDimensionEditor ? 'بستن ویرایش ابعاد' : 'ویرایش ابعاد این مصالح'}</span>
+            </button>
           </div>
 
-          {(showDimensionEditor || selectedPreset.id === 'custom') && (
+          {showDimensionEditor && (
             <div className="space-y-3 pt-2 border-t border-slate-200">
-              {selectedPreset.id === 'custom' && (
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    نام مصالح دلخواه
-                  </label>
-                  <input
-                    type="text"
-                    value={draft.customMaterialName}
-                    onChange={(e) =>
-                      onChangeDraft((prev) => ({...prev, customMaterialName: e.target.value}))
-                    }
-                    placeholder="مثلاً بلوک هبلکس یا آجر نما"
-                    className="w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3.5 text-base font-semibold text-slate-900"
-                  />
-                </div>
-              )}
-
               <div className="grid grid-cols-3 gap-2.5">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
@@ -318,14 +393,14 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
                 </div>
               </div>
 
-              {selectedPreset.id !== 'custom' && hasCustomOverride && (
+              {hasCustomOverride && (
                 <button
                   type="button"
                   onClick={handleResetDimensions}
-                  className="min-h-[44px] px-3 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 cursor-pointer"
+                  className="min-h-[42px] px-3 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 cursor-pointer"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  <span>بازگرداندن به ابعاد استاندارد کارخانه</span>
+                  <span>بازگرداندن به ابعاد اولیه</span>
                 </button>
               )}
             </div>
@@ -334,7 +409,8 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
           {thicknessWarning && (
             <div className="rounded-xl bg-amber-50 border border-amber-200 p-3 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-amber-950">
               <span>
-                توجه: ضخامت دیوار ({toPersianDigits(draft.wallThicknessCm)} سانت) از ضخامت مصالح ({toPersianDigits(draft.activeDimensionsCm.t)} سانت) کمتر است.
+                توجه: ضخامت دیوار ({toPersianDigits(draft.wallThicknessCm)} سانت) از ضخامت مصالح (
+                {toPersianDigits(draft.activeDimensionsCm.t)} سانت) کمتر است.
               </span>
               <button
                 type="button"
@@ -430,7 +506,11 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
                   }`}
                 >
                   <div className="font-bold text-base tabular-nums-fa">{opt.label}</div>
-                  <div className={`text-[11px] mt-0.5 ${active ? 'text-blue-100' : 'text-slate-500'}`}>
+                  <div
+                    className={`text-[11px] mt-0.5 ${
+                      active ? 'text-blue-100' : 'text-slate-500'
+                    }`}
+                  >
                     {opt.desc}
                   </div>
                 </button>
@@ -517,6 +597,43 @@ export const MaterialStep: React.FC<MaterialStepProps> = ({
           <ArrowLeft className="w-5 h-5" />
         </button>
       </div>
+
+      {/* Delete User Material Confirmation Modal */}
+      {confirmDeleteMat && (
+        <div
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4"
+          onClick={() => setConfirmDeleteMat(null)}
+        >
+          <div
+            className="w-full sm:max-w-sm bg-white rounded-t-3xl sm:rounded-3xl p-6 space-y-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-lg font-bold text-slate-900">حذف مصالح ثبت‌شده</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              آیا از حذف «{confirmDeleteMat.name}» از فهرست مصالح خودتان مطمئن هستید؟
+            </p>
+            <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  onDeleteUserMaterial(confirmDeleteMat.id);
+                  setConfirmDeleteMat(null);
+                }}
+                className="flex-1 min-h-[48px] rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm cursor-pointer"
+              >
+                بله، حذف شود
+              </button>
+              <button
+                type="button"
+                onClick={() => setConfirmDeleteMat(null)}
+                className="flex-1 min-h-[48px] rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm cursor-pointer"
+              >
+                انصراف
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

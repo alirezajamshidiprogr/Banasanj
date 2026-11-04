@@ -1,4 +1,5 @@
 import {Capacitor} from '@capacitor/core';
+import type {MaterialPreset} from '../types';
 import {normalizeNumericInput} from './formatters';
 
 export interface ParsedWallSentence {
@@ -42,8 +43,12 @@ function replaceSpokenPersianNumbers(text: string): string {
 
 /**
  * Built-in local parser used in native Android offline APK and whenever internet is unavailable.
+ * Smartly matches user-created custom materials first, then built-in Iranian presets.
  */
-function parseSentenceLocally(rawText: string): ParsedWallSentence {
+function parseSentenceLocally(
+  rawText: string,
+  userMaterials: MaterialPreset[] = []
+): ParsedWallSentence {
   const normalized = normalizeNumericInput(replaceSpokenPersianNumbers(rawText));
   let lengthM: number | null = null;
   let heightM: number | null = null;
@@ -51,46 +56,61 @@ function parseSentenceLocally(rawText: string): ParsedWallSentence {
   let materialPresetId: string | null = null;
   const openings: Array<{label: string; widthM: number; heightM: number}> = [];
 
-  if (/بلوک/.test(normalized)) {
-    if (/20/.test(normalized)) {
-      materialPresetId = 'block-20';
-      wallThicknessCm = 20;
-    } else if (/15/.test(normalized)) {
-      materialPresetId = 'block-15';
-      wallThicknessCm = 15;
-    } else {
-      materialPresetId = 'block-10';
-      if (/10/.test(normalized)) wallThicknessCm = 10;
-    }
-  } else if (/فشاری|گری/.test(normalized)) {
-    materialPresetId = 'feshari';
-    wallThicknessCm = 11;
-  } else if (/لفتون|ده\s*سوراخ|بهمنی/.test(normalized)) {
-    materialPresetId = 'laftoon';
-    wallThicknessCm = 10;
-  } else if (/سفال|تیغه/.test(normalized)) {
-    if (/20/.test(normalized)) {
-      materialPresetId = 'sofal-20';
-      wallThicknessCm = 20;
-    } else if (/15/.test(normalized)) {
-      materialPresetId = 'sofal-15';
-      wallThicknessCm = 15;
-    } else {
-      materialPresetId = 'sofal-10';
-      if (/10/.test(normalized)) wallThicknessCm = 10;
+  let cleanedForWall = normalized;
+
+  // 1. Check user-defined custom materials first (longest name match wins)
+  const sortedCustom = [...userMaterials].sort((a, b) => b.name.length - a.name.length);
+  for (const customMat of sortedCustom) {
+    const normalizedMatName = normalizeNumericInput(customMat.name.trim());
+    if (normalizedMatName.length >= 2 && cleanedForWall.includes(normalizedMatName)) {
+      materialPresetId = customMat.id;
+      wallThicknessCm = customMat.recommendedWallThicknessCm;
+      cleanedForWall = cleanedForWall.replace(normalizedMatName, ' ');
+      break;
     }
   }
 
-  const thickMatch = normalized.match(/(?:ضخامت|عرض)\s*(\d+(?:\.\d+)?)\s*(?:سانت|cm)?/);
+  // 2. Otherwise check standard built-in Iranian presets
+  if (!materialPresetId) {
+    if (/بلوک/.test(cleanedForWall)) {
+      if (/20/.test(cleanedForWall)) {
+        materialPresetId = 'block-20';
+        wallThicknessCm = 20;
+      } else if (/15/.test(cleanedForWall)) {
+        materialPresetId = 'block-15';
+        wallThicknessCm = 15;
+      } else {
+        materialPresetId = 'block-10';
+        if (/10/.test(cleanedForWall)) wallThicknessCm = 10;
+      }
+    } else if (/فشاری|گری/.test(cleanedForWall)) {
+      materialPresetId = 'feshari';
+      wallThicknessCm = 11;
+    } else if (/لفتون|ده\s*سوراخ|بهمنی/.test(cleanedForWall)) {
+      materialPresetId = 'laftoon';
+      wallThicknessCm = 10;
+    } else if (/سفال|تیغه/.test(cleanedForWall)) {
+      if (/20/.test(cleanedForWall)) {
+        materialPresetId = 'sofal-20';
+        wallThicknessCm = 20;
+      } else if (/15/.test(cleanedForWall)) {
+        materialPresetId = 'sofal-15';
+        wallThicknessCm = 15;
+      } else {
+        materialPresetId = 'sofal-10';
+        if (/10/.test(cleanedForWall)) wallThicknessCm = 10;
+      }
+    }
+  }
+
+  const thickMatch = cleanedForWall.match(/(?:ضخامت|عرض)\s*(\d+(?:\.\d+)?)\s*(?:سانت|cm)?/);
   if (thickMatch) {
     wallThicknessCm = Number(thickMatch[1]);
   }
 
-  // Extract optional window/door opening like "پنجره 1.5 در 1.2" or "درب 1 در 2.1"
   const openingRegex = /(پنجره|درب)\s*(\d+(?:\.\d+)?)\s*(?:در|×|\*|x|X)\s*(\d+(?:\.\d+)?)/g;
   let opMatch: RegExpExecArray | null;
-  let cleanedForWall = normalized;
-  while ((opMatch = openingRegex.exec(normalized)) !== null) {
+  while ((opMatch = openingRegex.exec(cleanedForWall)) !== null) {
     const w = Number(opMatch[2]);
     const h = Number(opMatch[3]);
     if (w > 0 && h > 0) {
@@ -134,12 +154,10 @@ function parseSentenceLocally(rawText: string): ParsedWallSentence {
   };
 }
 
-/**
- * Parses natural language Persian input:
- * - On native Android APK or when offline: uses instant built-in Persian parser.
- * - On web when online: uses server-side Gemini endpoint (/api/parse-wall) with local fallback.
- */
-export async function parseNaturalLanguageWall(text: string): Promise<ParsedWallSentence> {
+export async function parseNaturalLanguageWall(
+  text: string,
+  userMaterials: MaterialPreset[] = []
+): Promise<ParsedWallSentence> {
   const trimmed = text.trim();
   if (!trimmed) {
     return {
@@ -154,26 +172,33 @@ export async function parseNaturalLanguageWall(text: string): Promise<ParsedWall
   }
 
   if (Capacitor.isNativePlatform() || (typeof navigator !== 'undefined' && !navigator.onLine)) {
-    return parseSentenceLocally(trimmed);
+    return parseSentenceLocally(trimmed, userMaterials);
   }
 
   try {
     const response = await fetch('/api/parse-wall', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({text: trimmed}),
+      body: JSON.stringify({
+        text: trimmed,
+        userMaterials: userMaterials.map((m) => ({
+          id: m.id,
+          name: m.name,
+          thicknessCm: m.recommendedWallThicknessCm,
+        })),
+      }),
     });
 
     if (!response.ok) {
-      return parseSentenceLocally(trimmed);
+      return parseSentenceLocally(trimmed, userMaterials);
     }
 
     const data = (await response.json()) as ParsedWallSentence;
     if (data && typeof data.parsed === 'boolean') {
       return data;
     }
-    return parseSentenceLocally(trimmed);
+    return parseSentenceLocally(trimmed, userMaterials);
   } catch {
-    return parseSentenceLocally(trimmed);
+    return parseSentenceLocally(trimmed, userMaterials);
   }
 }

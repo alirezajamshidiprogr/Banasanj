@@ -1,16 +1,24 @@
+import {
+  BUILT_IN_IDS,
+  BUILT_IN_MATERIAL_PRESETS,
+  getAllMaterials,
+} from '../constants/materials';
 import type {
   DimensionsCm,
   EstimateDraft,
+  MaterialPreset,
+  MaterialUsageRecord,
   MixRatioValue,
   SavedEstimate,
   SavedPriceProfile,
 } from '../types';
-import {MATERIAL_PRESETS} from '../constants/materials';
 
 const KEYS = {
   SAVED_ESTIMATES: 'bannasanj_saved_estimates_v1',
   PRICE_PROFILE: 'bannasanj_price_profile_v1',
   PRESET_OVERRIDES: 'bannasanj_preset_overrides_v1',
+  USER_MATERIALS: 'bannasanj_user_materials_v1',
+  MATERIAL_USAGE: 'bannasanj_material_usage_v1',
   DEFAULT_MORTAR: 'bannasanj_default_mortar_v1',
   ACTIVE_DRAFT: 'bannasanj_active_draft_v1',
 };
@@ -53,7 +61,6 @@ function safeWriteJson<T>(key: string, value: T): void {
   }
 }
 
-// Mirror saved estimates into IndexedDB as well for extra offline durability
 const IDB_NAME = 'bannasanj_db';
 const IDB_STORE = 'kv';
 
@@ -75,6 +82,69 @@ function mirrorToIndexedDB(key: string, value: unknown): void {
   } catch {
     // localStorage remains primary synchronous source
   }
+}
+
+export function loadUserMaterials(): MaterialPreset[] {
+  const list = safeReadJson<MaterialPreset[]>(KEYS.USER_MATERIALS, []);
+  if (!Array.isArray(list)) return [];
+  // Ensure user materials always have isBuiltIn = false
+  return list
+    .filter((item) => item && typeof item.id === 'string' && !BUILT_IN_IDS.has(item.id))
+    .map((item) => ({
+      ...item,
+      isBuiltIn: false,
+    }));
+}
+
+export function saveUserMaterial(material: MaterialPreset): MaterialPreset[] {
+  const current = loadUserMaterials();
+  const safeItem: MaterialPreset = {
+    ...material,
+    isBuiltIn: false,
+  };
+  const idx = current.findIndex((m) => m.id === safeItem.id);
+  const next =
+    idx >= 0
+      ? current.map((m, i) => (i === idx ? safeItem : m))
+      : [safeItem, ...current];
+  safeWriteJson(KEYS.USER_MATERIALS, next);
+  mirrorToIndexedDB(KEYS.USER_MATERIALS, next);
+  return next;
+}
+
+/**
+ * Deletes ONLY user-defined materials. Strictly refuses to delete built-in presets.
+ */
+export function deleteUserMaterial(materialId: string): MaterialPreset[] {
+  if (BUILT_IN_IDS.has(materialId)) {
+    return loadUserMaterials();
+  }
+  const current = loadUserMaterials();
+  const next = current.filter((m) => m.id !== materialId);
+  safeWriteJson(KEYS.USER_MATERIALS, next);
+  mirrorToIndexedDB(KEYS.USER_MATERIALS, next);
+  return next;
+}
+
+export function loadMaterialUsageStats(): Record<string, MaterialUsageRecord> {
+  return safeReadJson<Record<string, MaterialUsageRecord>>(KEYS.MATERIAL_USAGE, {});
+}
+
+export function recordMaterialUsage(
+  materialId: string
+): Record<string, MaterialUsageRecord> {
+  const stats = loadMaterialUsageStats();
+  const prev = stats[materialId]?.count ?? 0;
+  const next: Record<string, MaterialUsageRecord> = {
+    ...stats,
+    [materialId]: {
+      count: prev + 1,
+      lastUsedAt: new Date().toISOString(),
+    },
+  };
+  safeWriteJson(KEYS.MATERIAL_USAGE, next);
+  mirrorToIndexedDB(KEYS.MATERIAL_USAGE, next);
+  return next;
 }
 
 export function loadSavedEstimates(): SavedEstimate[] {
@@ -141,7 +211,10 @@ export function loadPresetOverrides(): Record<string, DimensionsCm> {
   return safeReadJson<Record<string, DimensionsCm>>(KEYS.PRESET_OVERRIDES, {});
 }
 
-export function savePresetOverride(presetId: string, dims: DimensionsCm): Record<string, DimensionsCm> {
+export function savePresetOverride(
+  presetId: string,
+  dims: DimensionsCm
+): Record<string, DimensionsCm> {
   const current = loadPresetOverrides();
   const next = {...current, [presetId]: dims};
   safeWriteJson(KEYS.PRESET_OVERRIDES, next);
@@ -166,18 +239,33 @@ export function saveDefaultMortarSettings(settings: DefaultMortarSettings): void
 
 export function createInitialDraft(
   mortarDefaults: DefaultMortarSettings = loadDefaultMortarSettings(),
-  overrides: Record<string, DimensionsCm> = loadPresetOverrides()
+  overrides: Record<string, DimensionsCm> = loadPresetOverrides(),
+  userMaterials: MaterialPreset[] = loadUserMaterials(),
+  usageStats: Record<string, MaterialUsageRecord> = loadMaterialUsageStats()
 ): EstimateDraft {
-  const firstPreset = MATERIAL_PRESETS[0];
-  const dims = overrides[firstPreset.id] ?? firstPreset.actualCm;
+  const all = getAllMaterials(userMaterials);
+
+  // Smart default: pick the most recently used valid material if the user has used the app before!
+  let chosen = BUILT_IN_MATERIAL_PRESETS[0];
+  let latestTimestamp = '';
+  for (const mat of all) {
+    const usedAt = usageStats[mat.id]?.lastUsedAt;
+    if (usedAt && usedAt > latestTimestamp) {
+      latestTimestamp = usedAt;
+      chosen = mat;
+    }
+  }
+
+  const dims = overrides[chosen.id] ?? chosen.actualCm;
   return {
+    serviceId: 'wall-masonry',
     projectTitle: '',
     lengthM: '',
     heightM: '',
-    wallThicknessCm: String(firstPreset.recommendedWallThicknessCm),
+    wallThicknessCm: String(chosen.recommendedWallThicknessCm),
     openings: [],
-    selectedMaterialId: firstPreset.id,
-    customMaterialName: 'مصالح سفارشی',
+    selectedMaterialId: chosen.id,
+    customMaterialName: chosen.name,
     activeDimensionsCm: {
       l: String(dims.l),
       h: String(dims.h),

@@ -16,6 +16,8 @@ import {
   sanitizePriceInput,
   toPersianDigits,
 } from '../utils/formatters';
+import {CementBagIcon, SandPileIcon} from './MaterialIcons';
+import {MaterialThumbnail} from './MaterialThumbnail';
 
 interface PricingStepProps {
   materialPreset: MaterialPreset;
@@ -113,13 +115,23 @@ export const PricingStep: React.FC<PricingStepProps> = ({
           </div>
         )}
 
-        {/* 1. Price per Brick / Block */}
-        <div className="space-y-1.5">
-          <div className="flex items-center justify-between gap-2">
-            <label htmlFor="price-unit" className="text-sm font-bold text-slate-900">
-              قیمت هر عدد {materialDisplayName}
-            </label>
-            <span className="text-xs text-slate-500 tabular-nums-fa">
+        {/* 1. Price per Brick / Block (with photo thumbnail) */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <MaterialThumbnail
+                material={{
+                  ...materialPreset,
+                  name: materialDisplayName,
+                  thicknessCm: quantities.unitTM * 100,
+                }}
+                sizeClass="w-11 h-11 rounded-xl"
+              />
+              <label htmlFor="price-unit" className="text-sm font-bold text-slate-900 truncate">
+                قیمت هر عدد {materialDisplayName}
+              </label>
+            </div>
+            <span className="text-xs text-slate-500 tabular-nums-fa shrink-0">
               تعداد کل: {formatFaNumber(quantities.finalUnits, 0)} {materialPreset.unitLabel}
             </span>
           </div>
@@ -150,11 +162,15 @@ export const PricingStep: React.FC<PricingStepProps> = ({
           </div>
         </div>
 
-        {/* 2. Price per 50kg Cement Bag */}
+        {/* 2. Price per 50kg Cement Bag (icon only, no photo) */}
         <div className="space-y-1.5 pt-2 border-t border-slate-100">
           <div className="flex items-center justify-between gap-2">
-            <label htmlFor="price-cement" className="text-sm font-bold text-slate-900">
-              قیمت هر کیسه ۵۰ کیلویی سیمان
+            <label
+              htmlFor="price-cement"
+              className="text-sm font-bold text-slate-900 flex items-center gap-2"
+            >
+              <CementBagIcon className="w-5 h-5 text-blue-700 shrink-0" />
+              <span>قیمت هر کیسه ۵۰ کیلویی سیمان</span>
             </label>
             <span className="text-xs text-slate-500 tabular-nums-fa">
               تعداد کل: {formatFaNumber(quantities.cementBags, 0)} کیسه
@@ -187,11 +203,15 @@ export const PricingStep: React.FC<PricingStepProps> = ({
           </div>
         </div>
 
-        {/* 3. Price per Kg of Sand */}
+        {/* 3. Price per Kg of Sand (icon only, no photo) */}
         <div className="space-y-1.5 pt-2 border-t border-slate-100">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <label htmlFor="price-sand" className="text-sm font-bold text-slate-900">
-              قیمت هر کیلوگرم ماسه
+            <label
+              htmlFor="price-sand"
+              className="text-sm font-bold text-slate-900 flex items-center gap-2"
+            >
+              <SandPileIcon className="w-5 h-5 text-blue-700 shrink-0" />
+              <span>قیمت هر کیلوگرم ماسه</span>
             </label>
             <div className="flex items-center gap-3">
               <span className="text-xs text-slate-500 tabular-nums-fa">

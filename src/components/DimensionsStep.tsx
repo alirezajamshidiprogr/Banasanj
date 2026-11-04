@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ArrowLeft, Loader2, Plus, Sparkles, Trash2, Wand2} from 'lucide-react';
-import {getPresetById} from '../constants/materials';
-import type {DimensionsCm, EstimateDraft, OpeningItem} from '../types';
+import {getMaterialById} from '../constants/materials';
+import type {DimensionsCm, EstimateDraft, MaterialPreset, OpeningItem} from '../types';
 import {
   formatFaNumber,
   parsePositiveNumber,
@@ -12,18 +12,22 @@ import {parseNaturalLanguageWall} from '../utils/nlpParser';
 
 interface DimensionsStepProps {
   draft: EstimateDraft;
+  userMaterials: MaterialPreset[];
   presetOverrides: Record<string, DimensionsCm>;
   onChangeDraft: (updater: (prev: EstimateDraft) => EstimateDraft) => void;
   onNextStep: () => void;
+  onBackToServices: () => void;
 }
 
 const THICKNESS_QUICK_OPTIONS = [10, 15, 20, 35];
 
 export const DimensionsStep: React.FC<DimensionsStepProps> = ({
   draft,
+  userMaterials,
   presetOverrides,
   onChangeDraft,
   onNextStep,
+  onBackToServices,
 }) => {
   const [nlText, setNlText] = useState('');
   const [isParsing, setIsParsing] = useState(false);
@@ -61,11 +65,10 @@ export const DimensionsStep: React.FC<DimensionsStepProps> = ({
     setNlFeedback(null);
     setValidationError(null);
 
-    const result = await parseNaturalLanguageWall(trimmed);
+    const result = await parseNaturalLanguageWall(trimmed, userMaterials);
     setIsParsing(false);
 
     if (!result.parsed) {
-      // Keep manual fields strictly unchanged and show friendly Persian message
       setNlFeedback({
         type: 'info',
         message:
@@ -83,9 +86,10 @@ export const DimensionsStep: React.FC<DimensionsStepProps> = ({
         next.heightM = String(result.heightM);
       }
       if (result.materialPresetId) {
-        const preset = getPresetById(result.materialPresetId);
+        const preset = getMaterialById(result.materialPresetId, userMaterials);
         const dims = presetOverrides[preset.id] ?? preset.actualCm;
         next.selectedMaterialId = preset.id;
+        next.customMaterialName = preset.name;
         next.activeDimensionsCm = {
           l: String(dims.l),
           h: String(dims.h),
@@ -112,8 +116,12 @@ export const DimensionsStep: React.FC<DimensionsStepProps> = ({
     const parts: string[] = [];
     if (result.lengthM) parts.push(`طول ${formatFaNumber(result.lengthM, 2)} متر`);
     if (result.heightM) parts.push(`ارتفاع ${formatFaNumber(result.heightM, 2)} متر`);
-    if (result.wallThicknessCm) parts.push(`ضخامت ${formatFaNumber(result.wallThicknessCm, 1)} سانتی‌متر`);
-    if (result.materialPresetId) parts.push(`مصالح ${getPresetById(result.materialPresetId).name}`);
+    if (result.wallThicknessCm) {
+      parts.push(`ضخامت ${formatFaNumber(result.wallThicknessCm, 1)} سانتی‌متر`);
+    }
+    if (result.materialPresetId) {
+      parts.push(`مصالح ${getMaterialById(result.materialPresetId, userMaterials).name}`);
+    }
 
     setNlFeedback({
       type: 'success',
@@ -178,14 +186,19 @@ export const DimensionsStep: React.FC<DimensionsStepProps> = ({
       const h = parsePositiveNumber(op.heightM);
       if (!w || !h) {
         setValidationError(
-          `لطفاً عرض و ارتفاع «${op.label || 'بازشو'}» ردیف ${formatFaNumber(i + 1, 0)} را کامل و مثبت وارد کنید یا آن را حذف کنید.`
+          `لطفاً عرض و ارتفاع «${op.label || 'بازشو'}» ردیف ${formatFaNumber(
+            i + 1,
+            0
+          )} را کامل و مثبت وارد کنید یا آن را حذف کنید.`
         );
         return;
       }
     }
 
     if (openingsTotalArea >= grossArea) {
-      setValidationError('مجموع مساحت در و پنجره‌ها نمی‌تواند بیشتر یا مساوی مساحت کل دیوار باشد.');
+      setValidationError(
+        'مجموع مساحت در و پنجره‌ها نمی‌تواند بیشتر یا مساوی مساحت کل دیوار باشد.'
+      );
       return;
     }
 
@@ -195,10 +208,27 @@ export const DimensionsStep: React.FC<DimensionsStepProps> = ({
 
   return (
     <div className="space-y-6">
+      {/* Active Service Context Bar */}
+      <div className="flex items-center justify-between gap-2 text-xs sm:text-sm text-slate-600 px-1">
+        <div>
+          نوع خدمات بنّایی: <strong className="text-slate-900">دیوارکشی و تیغه‌چینی</strong>
+        </div>
+        <button
+          type="button"
+          onClick={onBackToServices}
+          className="text-blue-700 font-semibold hover:underline cursor-pointer"
+        >
+          مشاهده سایر خدمات
+        </button>
+      </div>
+
       {/* AI Natural Language Input Box */}
       <section className="rounded-2xl bg-white border border-slate-200 p-5 space-y-3">
         <div className="flex items-center justify-between gap-2">
-          <label htmlFor="nl-wall-input" className="text-base font-bold text-slate-900 flex items-center gap-2">
+          <label
+            htmlFor="nl-wall-input"
+            className="text-base font-bold text-slate-900 flex items-center gap-2"
+          >
             <Wand2 className="w-5 h-5 text-blue-700 shrink-0" />
             <span>ورود سریع با جمله فارسی (اختیاری)</span>
           </label>
@@ -316,7 +346,10 @@ export const DimensionsStep: React.FC<DimensionsStepProps> = ({
 
         {/* Wall Thickness */}
         <div>
-          <label htmlFor="wall-thickness" className="block text-sm font-bold text-slate-800 mb-1.5">
+          <label
+            htmlFor="wall-thickness"
+            className="block text-sm font-bold text-slate-800 mb-1.5"
+          >
             ضخامت دیوار (سانتی‌متر)
           </label>
           <div className="grid grid-cols-4 gap-2 mb-2.5">

@@ -12338,6 +12338,21 @@ var Calculator = createLucideIcon("calculator", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Camera = createLucideIcon("camera", [["path", {
+	d: "M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z",
+	key: "18u6gg"
+}], ["circle", {
+	cx: "12",
+	cy: "13",
+	r: "3",
+	key: "1vg3eu"
+}]]);
+/**
+* @license lucide-react v0.546.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Check = createLucideIcon("check", [["path", {
 	d: "M20 6 9 17l-5-5",
 	key: "1gmf2c"
@@ -12384,6 +12399,21 @@ var CirclePlus = createLucideIcon("circle-plus", [
 		key: "napkw2"
 	}]
 ]);
+/**
+* @license lucide-react v0.546.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Clock = createLucideIcon("clock", [["path", {
+	d: "M12 6v6l4 2",
+	key: "mmk7yg"
+}], ["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}]]);
 /**
 * @license lucide-react v0.546.0 - ISC
 *
@@ -12465,42 +12495,38 @@ var FileDown = createLucideIcon("file-down", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var FileSpreadsheet = createLucideIcon("file-spreadsheet", [
-	["path", {
-		d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z",
-		key: "1rqfz7"
-	}],
-	["path", {
-		d: "M14 2v4a2 2 0 0 0 2 2h4",
-		key: "tnqrlb"
-	}],
-	["path", {
-		d: "M8 13h2",
-		key: "yr2amv"
-	}],
-	["path", {
-		d: "M14 13h2",
-		key: "un5t4a"
-	}],
-	["path", {
-		d: "M8 17h2",
-		key: "2yhykz"
-	}],
-	["path", {
-		d: "M14 17h2",
-		key: "10kma7"
-	}]
-]);
+var FolderOpen = createLucideIcon("folder-open", [["path", {
+	d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",
+	key: "usdka0"
+}]]);
 /**
 * @license lucide-react v0.546.0 - ISC
 *
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var FolderOpen = createLucideIcon("folder-open", [["path", {
-	d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",
-	key: "usdka0"
-}]]);
+var HardHat = createLucideIcon("hard-hat", [
+	["path", {
+		d: "M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5",
+		key: "1p9q5i"
+	}],
+	["path", {
+		d: "M14 6a6 6 0 0 1 6 6v3",
+		key: "1hnv84"
+	}],
+	["path", {
+		d: "M4 15v-3a6 6 0 0 1 6-6",
+		key: "9ciidu"
+	}],
+	["rect", {
+		x: "2",
+		y: "15",
+		width: "20",
+		height: "4",
+		rx: "1",
+		key: "g3x8cw"
+	}]
+]);
 /**
 * @license lucide-react v0.546.0 - ISC
 *
@@ -12542,9 +12568,47 @@ var Info = createLucideIcon("info", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Layers = createLucideIcon("layers", [
+	["path", {
+		d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
+		key: "zw3jo"
+	}],
+	["path", {
+		d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
+		key: "1wduqc"
+	}],
+	["path", {
+		d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
+		key: "kqbvx6"
+	}]
+]);
+/**
+* @license lucide-react v0.546.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var LoaderCircle = createLucideIcon("loader-circle", [["path", {
 	d: "M21 12a9 9 0 1 1-6.219-8.56",
 	key: "13zald"
+}]]);
+/**
+* @license lucide-react v0.546.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Lock = createLucideIcon("lock", [["rect", {
+	width: "18",
+	height: "11",
+	x: "3",
+	y: "11",
+	rx: "2",
+	ry: "2",
+	key: "1w4ew1"
+}], ["path", {
+	d: "M7 11V7a5 5 0 0 1 10 0v4",
+	key: "fwvmzm"
 }]]);
 /**
 * @license lucide-react v0.546.0 - ISC
@@ -12556,6 +12620,30 @@ var MessageCircle = createLucideIcon("message-circle", [["path", {
 	d: "M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719",
 	key: "1sd12s"
 }]]);
+/**
+* @license lucide-react v0.546.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var PaintBucket = createLucideIcon("paint-bucket", [
+	["path", {
+		d: "m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z",
+		key: "irua1i"
+	}],
+	["path", {
+		d: "m5 2 5 5",
+		key: "1lls2c"
+	}],
+	["path", {
+		d: "M2 13h15",
+		key: "1hkzvu"
+	}],
+	["path", {
+		d: "M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z",
+		key: "xk76lq"
+	}]
+]);
 /**
 * @license lucide-react v0.546.0 - ISC
 *
@@ -12681,6 +12769,24 @@ var SlidersHorizontal = createLucideIcon("sliders-horizontal", [
 		key: "a7s4jb"
 	}]
 ]);
+/**
+* @license lucide-react v0.546.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Smartphone = createLucideIcon("smartphone", [["rect", {
+	width: "14",
+	height: "20",
+	x: "5",
+	y: "2",
+	rx: "2",
+	ry: "2",
+	key: "1yt0o3"
+}], ["path", {
+	d: "M12 18h.01",
+	key: "mhygvu"
+}]]);
 /**
 * @license lucide-react v0.546.0 - ISC
 *
@@ -12839,7 +12945,57 @@ var X$1 = createLucideIcon("x", [["path", {
 }]]);
 // src/constants/materials.ts
 var MANDATORY_DISCLAIMER = "این اپ برآورد تقریبی مصالح است و جای مهندس ناظر یا محاسبات سازه‌ای را نمی‌گیرد.";
-var MATERIAL_PRESETS = [
+var CONSTRUCTION_SERVICES = [
+	{
+		id: "wall-masonry",
+		title: "دیوارکشی و تیغه‌چینی",
+		shortDesc: "محاسبه دقیق آجر، بلوک، سیمان، ماسه و دستمزد دیوار",
+		upcomingDetails: "فعال و آماده استفاده",
+		isActive: true,
+		phaseLabel: "فاز اول · فعال"
+	},
+	{
+		id: "plaster-undercoat",
+		title: "گچ‌کشی (گچ و خاک)",
+		shortDesc: "برآورد گچ و خاک، شمشه‌گیری و زیرکار دیوار و سقف",
+		upcomingDetails: "در این بخش بر اساس متراژ و ضخامت گچ‌خاک، تعداد کیسه‌های گچ، خاک رس الک‌شده و دستمزد گچ‌کار محاسبه خواهد شد.",
+		isActive: false,
+		phaseLabel: "در حال توسعه"
+	},
+	{
+		id: "whitewash-finish",
+		title: "سفیدکاری و پرداخت",
+		shortDesc: "برآورد گچ سفیدکاری میکرونیزه و رویه نهایی",
+		upcomingDetails: "در این بخش تعداد کیسه گچ سفیدکاری، متراژ خالص سطوح و هزینه اجرای سفیدکاری محاسبه خواهد شد.",
+		isActive: false,
+		phaseLabel: "در حال توسعه"
+	},
+	{
+		id: "roofing-slab",
+		title: "سقف‌زنی (تیرچه و بلوک / طاق‌ضربی)",
+		shortDesc: "برآورد تیرچه، بلوک سقفی یا یونولیت، آرماتور و بتن",
+		upcomingDetails: "در این بخش بر اساس دهانه و مساحت سقف، تعداد تیرچه، بلوک سفالی/سیمانی یا فوم سقفی، میلگرد حرارتی و حجم بتن سقف محاسبه خواهد شد.",
+		isActive: false,
+		phaseLabel: "در حال توسعه"
+	},
+	{
+		id: "cement-plaster",
+		title: "سیمان‌کاری و پلاستر",
+		shortDesc: "برآورد آستر و رویه سیمان سیاه و سفید نما و محوطه",
+		upcomingDetails: "در این بخش مقدار سیمان، ماسه شسته/بادی و هزینه اجرای پلاستر زبره و نرمه محاسبه خواهد شد.",
+		isActive: false,
+		phaseLabel: "در حال توسعه"
+	},
+	{
+		id: "flooring-screed",
+		title: "کف‌سازی، شیب‌بندی و موزاییک",
+		shortDesc: "برآورد پوکه، ملات کف‌سازی، موزاییک و سرامیک",
+		upcomingDetails: "در این بخش حجم پوکه معدنی یا صنعتی، سیمان و ماسه شیب‌بندی و متراژ موزاییک یا سرامیک کف محاسبه خواهد شد.",
+		isActive: false,
+		phaseLabel: "در حال توسعه"
+	}
+];
+var BUILT_IN_MATERIAL_PRESETS = [
 	{
 		id: "sofal-10",
 		name: "آجر سفال ۱۰",
@@ -12857,7 +13013,8 @@ var MATERIAL_PRESETS = [
 			t: 9.5
 		},
 		recommendedWallThicknessCm: 10,
-		subtitle: "تیغه داخلی و جداکننده ۱۰ سانتی"
+		subtitle: "تیغه داخلی و جداکننده ۱۰ سانتی",
+		isBuiltIn: true
 	},
 	{
 		id: "sofal-15",
@@ -12876,7 +13033,8 @@ var MATERIAL_PRESETS = [
 			t: 14.5
 		},
 		recommendedWallThicknessCm: 15,
-		subtitle: "دیوار میانی و پیرامونی ۱۵ سانتی"
+		subtitle: "دیوار میانی و پیرامونی ۱۵ سانتی",
+		isBuiltIn: true
 	},
 	{
 		id: "sofal-20",
@@ -12895,7 +13053,8 @@ var MATERIAL_PRESETS = [
 			t: 19.5
 		},
 		recommendedWallThicknessCm: 20,
-		subtitle: "دیوار خارجی و پیرامونی ۲۰ سانتی"
+		subtitle: "دیوار خارجی و پیرامونی ۲۰ سانتی",
+		isBuiltIn: true
 	},
 	{
 		id: "feshari",
@@ -12914,7 +13073,8 @@ var MATERIAL_PRESETS = [
 			t: 10
 		},
 		recommendedWallThicknessCm: 11,
-		subtitle: "آجر گری توپر مناسب کرسی‌چینی و دیوار باربر"
+		subtitle: "آجر گری توپر مناسب کرسی‌چینی و دیوار باربر",
+		isBuiltIn: true
 	},
 	{
 		id: "laftoon",
@@ -12933,7 +13093,8 @@ var MATERIAL_PRESETS = [
 			t: 9.5
 		},
 		recommendedWallThicknessCm: 10,
-		subtitle: "آجر ده‌سوراخ نما و دیوارچینی تمیز"
+		subtitle: "آجر ده‌سوراخ نما و دیوارچینی تمیز",
+		isBuiltIn: true
 	},
 	{
 		id: "block-10",
@@ -12952,7 +13113,8 @@ var MATERIAL_PRESETS = [
 			t: 10
 		},
 		recommendedWallThicknessCm: 10,
-		subtitle: "بلوک سبک یا سنگین تیغه‌ای ۱۰ سانتی"
+		subtitle: "بلوک سبک یا سنگین تیغه‌ای ۱۰ سانتی",
+		isBuiltIn: true
 	},
 	{
 		id: "block-15",
@@ -12971,7 +13133,8 @@ var MATERIAL_PRESETS = [
 			t: 15
 		},
 		recommendedWallThicknessCm: 15,
-		subtitle: "بلوک دیواری ۱۵ سانتی محوطه و ساختمان"
+		subtitle: "بلوک دیواری ۱۵ سانتی محوطه و ساختمان",
+		isBuiltIn: true
 	},
 	{
 		id: "block-20",
@@ -12990,33 +13153,19 @@ var MATERIAL_PRESETS = [
 			t: 20
 		},
 		recommendedWallThicknessCm: 20,
-		subtitle: "بلوک سنگین محوطه، باغ و دیوار حیاط"
-	},
-	{
-		id: "custom",
-		name: "مصالح سفارشی",
-		shortName: "سفارشی",
-		category: "custom",
-		unitLabel: "واحد",
-		nominalCm: {
-			l: 25,
-			h: 20,
-			t: 15
-		},
-		actualCm: {
-			l: 25,
-			h: 20,
-			t: 15
-		},
-		recommendedWallThicknessCm: 15,
-		subtitle: "ورود دستی طول، ارتفاع و ضخامت هر بلوک یا آجر"
+		subtitle: "بلوک سنگین محوطه، باغ و دیوار حیاط",
+		isBuiltIn: true
 	}
 ];
-function getPresetById(id) {
-	return MATERIAL_PRESETS.find((m) => m.id === id) ?? MATERIAL_PRESETS[0];
+var BUILT_IN_IDS = new Set(BUILT_IN_MATERIAL_PRESETS.map((m) => m.id));
+function getAllMaterials(userMaterials = []) {
+	return [...BUILT_IN_MATERIAL_PRESETS, ...userMaterials];
 }
-function getDefaultAlternativeMaterialId(currentId) {
-	return {
+function getMaterialById(id, userMaterials = []) {
+	return getAllMaterials(userMaterials).find((m) => m.id === id) ?? BUILT_IN_MATERIAL_PRESETS[0];
+}
+function getDefaultAlternativeMaterialId(currentId, userMaterials = []) {
+	const map = {
 		"sofal-10": "block-10",
 		"sofal-15": "block-15",
 		"sofal-20": "block-20",
@@ -13024,9 +13173,31 @@ function getDefaultAlternativeMaterialId(currentId) {
 		laftoon: "feshari",
 		"block-10": "sofal-10",
 		"block-15": "sofal-15",
-		"block-20": "sofal-20",
-		custom: "sofal-15"
-	}[currentId] ?? "block-10";
+		"block-20": "sofal-20"
+	};
+	if (map[currentId]) return map[currentId];
+	const current = getAllMaterials(userMaterials).find((m) => m.id === currentId);
+	if (current) {
+		const opposite = BUILT_IN_MATERIAL_PRESETS.filter((p) => p.category !== current.category);
+		if (opposite.length > 0) {
+			opposite.sort((a, b) => Math.abs(a.recommendedWallThicknessCm - current.recommendedWallThicknessCm) - Math.abs(b.recommendedWallThicknessCm - current.recommendedWallThicknessCm));
+			return opposite[0].id;
+		}
+	}
+	return "block-10";
+}
+/**
+* Smartly infers category and unit label as the user types a new material name.
+*/
+function inferMaterialCategoryFromName(name) {
+	if (/بلوک|هبلکس|لیکا|پوکه|سیپورکس|گازی|بتنی|سیمانی/.test(name)) return {
+		category: "block",
+		unitLabel: "بلوک"
+	};
+	return {
+		category: "brick",
+		unitLabel: "آجر"
+	};
 }
 // src/utils/formatters.ts
 var PERSIAN_DIGITS = [
@@ -13161,6 +13332,566 @@ function formatJalaliDate(isoDate) {
 		return "";
 	}
 }
+// src/assets/images/block_cement_heavy_1793758116025.jpg
+var block_cement_heavy_1793758116025_default = "/assets/block_cement_heavy_1793758116025-Dq-Ch4np.jpg";
+// src/assets/images/block_cement_thin_1793758116010.jpg
+var block_cement_thin_1793758116010_default = "/assets/block_cement_thin_1793758116010-CFrgIPca.jpg";
+// src/assets/images/brick_feshari_solid_1793758110079.jpg
+var brick_feshari_solid_1793758110079_default = "/assets/brick_feshari_solid_1793758110079-f1pWFjr2.jpg";
+// src/assets/images/brick_laftoon_perforated_1793758126638.jpg
+var brick_laftoon_perforated_1793758126638_default = "/assets/brick_laftoon_perforated_1793758126638-BckL0drG.jpg";
+// src/assets/images/brick_sofal_thick_1793758114404.jpg
+var brick_sofal_thick_1793758114404_default = "/assets/brick_sofal_thick_1793758114404-CoqDWgN0.jpg";
+// src/assets/images/brick_sofal_thin_1793758112909.jpg
+var brick_sofal_thin_1793758112909_default = "/assets/brick_sofal_thin_1793758112909-CxcBNEHk.jpg";
+// src/constants/materialImages.ts
+var BUILT_IN_IMAGE_MAP = {
+	"sofal-10": brick_sofal_thin_1793758112909_default,
+	"sofal-15": brick_sofal_thick_1793758114404_default,
+	"sofal-20": brick_sofal_thick_1793758114404_default,
+	feshari: brick_feshari_solid_1793758110079_default,
+	laftoon: brick_laftoon_perforated_1793758126638_default,
+	"block-10": block_cement_thin_1793758116010_default,
+	"block-15": block_cement_heavy_1793758116025_default,
+	"block-20": block_cement_heavy_1793758116025_default
+};
+/**
+* Smartly resolves the visual thumbnail image for built-in presets or user-defined custom materials.
+* Note: Only used for wall units (bricks/blocks), NEVER for cement or sand.
+*/
+function resolveMaterialImage(material) {
+	if (material.customImageDataUrl) return material.customImageDataUrl;
+	if (BUILT_IN_IMAGE_MAP[material.id]) return BUILT_IN_IMAGE_MAP[material.id];
+	return inferSmartPreviewImage(material.name, material.category, material.thicknessCm ?? 15);
+}
+/**
+* Smartly picks the closest realistic masonry photo based on Persian material name, category, and thickness.
+*/
+function inferSmartPreviewImage(name, category, thicknessCm) {
+	const cleanName = name.trim();
+	if (/لفتون|بهمنی|ده\s*سوراخ|نما|نسوز/.test(cleanName)) return brick_laftoon_perforated_1793758126638_default;
+	if (/فشاری|گری|قزاقی|سنتی|توپر/.test(cleanName)) return brick_feshari_solid_1793758110079_default;
+	if (/سفال|تیغه/.test(cleanName)) return thicknessCm <= 12 ? brick_sofal_thin_1793758112909_default : brick_sofal_thick_1793758114404_default;
+	if (category === "block" || /بلوک|هبلکس|لیکا|پوکه|سیمانی|سیپورکس/.test(cleanName)) return thicknessCm <= 12 ? block_cement_thin_1793758116010_default : block_cement_heavy_1793758116025_default;
+	return thicknessCm <= 12 ? brick_feshari_solid_1793758110079_default : brick_sofal_thick_1793758114404_default;
+}
+// node_modules/react/cjs/react-jsx-runtime.production.js
+/**
+* @license React
+* react-jsx-runtime.production.js
+*
+* Copyright (c) Meta Platforms, Inc. and affiliates.
+*
+* This source code is licensed under the MIT license found in the
+* LICENSE file in the root directory of this source tree.
+*/
+var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((exports) => {
+	var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
+	var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
+	function jsxProd(type, config, maybeKey) {
+		var key = null;
+		void 0 !== maybeKey && (key = "" + maybeKey);
+		void 0 !== config.key && (key = "" + config.key);
+		if ("key" in config) {
+			maybeKey = {};
+			for (var propName in config) "key" !== propName && (maybeKey[propName] = config[propName]);
+		} else maybeKey = config;
+		config = maybeKey.ref;
+		return {
+			$$typeof: REACT_ELEMENT_TYPE,
+			type,
+			key,
+			ref: void 0 !== config ? config : null,
+			props: maybeKey
+		};
+	}
+	exports.Fragment = REACT_FRAGMENT_TYPE;
+	exports.jsx = jsxProd;
+	exports.jsxs = jsxProd;
+}));
+// src/components/MaterialIcons.tsx
+var import_jsx_runtime = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
+	module.exports = require_react_jsx_runtime_production();
+})))();
+var BrickIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.9",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	className,
+	"aria-hidden": "true",
+	children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "2.5",
+			y: "4.5",
+			width: "8.5",
+			height: "6",
+			rx: "1.2"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "13",
+			y: "4.5",
+			width: "8.5",
+			height: "6",
+			rx: "1.2"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "2.5",
+			y: "13.5",
+			width: "5",
+			height: "6",
+			rx: "1.2"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "9.5",
+			y: "13.5",
+			width: "6.5",
+			height: "6",
+			rx: "1.2"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "18",
+			y: "13.5",
+			width: "3.5",
+			height: "6",
+			rx: "1"
+		})
+	]
+});
+var BlockIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.9",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	className,
+	"aria-hidden": "true",
+	children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "2.5",
+			y: "5.5",
+			width: "19",
+			height: "13",
+			rx: "2"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "6",
+			y: "9",
+			width: "4.5",
+			height: "6",
+			rx: "0.8"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "13.5",
+			y: "9",
+			width: "4.5",
+			height: "6",
+			rx: "0.8"
+		})
+	]
+});
+var CementBagIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.9",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	className,
+	"aria-hidden": "true",
+	children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M6.5 4h11l1.5 3.5v9A3.5 3.5 0 0 1 15.5 20h-7A3.5 3.5 0 0 1 5 16.5v-9L6.5 4Z" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M5.5 7.5h13" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M9.5 12h5" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M10.5 15h3" })
+	]
+});
+var SandPileIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.9",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	className,
+	"aria-hidden": "true",
+	children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M2.5 18.5 10.2 8.2a2.3 2.3 0 0 1 3.6 0l7.7 10.3H2.5Z" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+			cx: "12",
+			cy: "13.5",
+			r: "0.7",
+			fill: "currentColor"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+			cx: "9.5",
+			cy: "15.5",
+			r: "0.7",
+			fill: "currentColor"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+			cx: "14.5",
+			cy: "15.5",
+			r: "0.7",
+			fill: "currentColor"
+		})
+	]
+});
+var MortarTubIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.9",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	className,
+	"aria-hidden": "true",
+	children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 11h18l-2 8H5l-2-8Z" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M6.5 11c1.2-2.2 3.2-3.5 5.5-3.5s4.3 1.3 5.5 3.5" })]
+});
+var WallAreaIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.9",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	className,
+	"aria-hidden": "true",
+	children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+			x: "3",
+			y: "4",
+			width: "18",
+			height: "16",
+			rx: "2"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 9.5h18" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 14.5h18" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M9 4v5.5" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M15 9.5v5" }),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M10 14.5V20" })
+	]
+});
+// src/components/MaterialThumbnail.tsx
+var MaterialThumbnail = ({ material, sizeClass = "w-16 h-16 rounded-2xl" }) => {
+	const [imgFailed, setImgFailed] = (0, import_react.useState)(false);
+	const src = resolveMaterialImage(material);
+	if (imgFailed || !src) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: `${sizeClass} bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center shrink-0`,
+		children: material.category === "block" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlockIcon, { className: "w-7 h-7" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrickIcon, { className: "w-7 h-7" })
+	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: `${sizeClass} overflow-hidden bg-slate-100 border border-slate-200/80 shrink-0 flex items-center justify-center`,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+			src,
+			alt: `تصویر ${material.name}`,
+			referrerPolicy: "no-referrer",
+			loading: "lazy",
+			onError: () => setImgFailed(true),
+			className: "w-full h-full object-cover"
+		})
+	});
+};
+// src/components/AddMaterialModal.tsx
+/**
+* Compresses an uploaded image from camera/gallery into a tiny 160x160 JPEG DataURL
+* so localStorage / IndexedDB stays fast and never hits storage limits.
+*/
+function compressImageToThumbnail(file) {
+	return new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			const img = new Image();
+			img.onload = () => {
+				const size = 160;
+				const canvas = document.createElement("canvas");
+				canvas.width = size;
+				canvas.height = size;
+				const ctx = canvas.getContext("2d");
+				if (!ctx) {
+					reject(/* @__PURE__ */ new Error("Canvas context unavailable"));
+					return;
+				}
+				ctx.fillStyle = "#F8FAFC";
+				ctx.fillRect(0, 0, size, size);
+				const minSide = Math.min(img.width, img.height);
+				const sx = (img.width - minSide) / 2;
+				const sy = (img.height - minSide) / 2;
+				ctx.drawImage(img, sx, sy, minSide, minSide, 0, 0, size, size);
+				resolve(canvas.toDataURL("image/jpeg", .8));
+			};
+			img.onerror = () => reject(/* @__PURE__ */ new Error("Failed to load image"));
+			img.src = String(reader.result ?? "");
+		};
+		reader.onerror = () => reject(reader.error);
+		reader.readAsDataURL(file);
+	});
+}
+var AddMaterialModal = ({ isOpen, onClose, onSaveNewMaterial }) => {
+	const [name, setName] = (0, import_react.useState)("");
+	const [category, setCategory] = (0, import_react.useState)("block");
+	const [categoryManuallyPicked, setCategoryManuallyPicked] = (0, import_react.useState)(false);
+	const [lengthCm, setLengthCm] = (0, import_react.useState)("");
+	const [heightCm, setHeightCm] = (0, import_react.useState)("");
+	const [thicknessCm, setThicknessCm] = (0, import_react.useState)("");
+	const [customImage, setCustomImage] = (0, import_react.useState)(void 0);
+	const [errorMsg, setErrorMsg] = (0, import_react.useState)(null);
+	const fileInputRef = (0, import_react.useRef)(null);
+	if (!isOpen) return null;
+	const handleNameChange = (val) => {
+		setName(val);
+		setErrorMsg(null);
+		if (!categoryManuallyPicked && val.trim().length > 1) {
+			const inferred = inferMaterialCategoryFromName(val);
+			setCategory(inferred.category);
+		}
+	};
+	const handlePhotoUpload = async (e) => {
+		const file = e.target.files?.[0];
+		if (!file) return;
+		try {
+			const dataUrl = await compressImageToThumbnail(file);
+			setCustomImage(dataUrl);
+			setErrorMsg(null);
+		} catch {
+			setErrorMsg("امکان بارگذاری این تصویر نبود؛ از تصویر پیش‌فرض هوشمند استفاده می‌شود.");
+		}
+	};
+	const parsedL = parsePositiveNumber(lengthCm);
+	const parsedH = parsePositiveNumber(heightCm);
+	const parsedT = parsePositiveNumber(thicknessCm);
+	const handleSave = (e) => {
+		e.preventDefault();
+		const cleanName = name.trim();
+		if (!cleanName) {
+			setErrorMsg("لطفاً نام مصالح جدید را وارد کنید (مثلاً بلوک هبلکس ۱۵ یا آجر قزاقی).");
+			return;
+		}
+		if (!parsedL || !parsedH || !parsedT) {
+			setErrorMsg("لطفاً طول، ارتفاع و ضخامت مصالح را به صورت اعداد مثبت (سانتی‌متر) وارد کنید.");
+			return;
+		}
+		const unitLabel = category === "block" ? "بلوک" : "آجر";
+		const recommendedThick = Math.round(parsedT * 10) / 10;
+		onSaveNewMaterial({
+			id: `user-mat-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+			name: cleanName,
+			shortName: cleanName.slice(0, 18),
+			category,
+			unitLabel,
+			nominalCm: {
+				l: parsedL,
+				h: parsedH,
+				t: parsedT
+			},
+			actualCm: {
+				l: parsedL,
+				h: parsedH,
+				t: parsedT
+			},
+			recommendedWallThicknessCm: recommendedThick,
+			subtitle: `ثبت‌شده توسط شما · ضخامت دیوار پیشنهادی ${formatFaNumber(recommendedThick, 1)} سانت`,
+			isBuiltIn: false,
+			customImageDataUrl: customImage,
+			createdAt: (/* @__PURE__ */ new Date()).toISOString()
+		});
+		setName("");
+		setLengthCm("");
+		setHeightCm("");
+		setThicknessCm("");
+		setCustomImage(void 0);
+		setCategoryManuallyPicked(false);
+		setErrorMsg(null);
+		onClose();
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "fixed inset-0 z-50 bg-black/55 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4",
+		onClick: onClose,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "w-full sm:max-w-lg bg-white rounded-t-3xl sm:rounded-3xl max-h-[92vh] flex flex-col overflow-hidden",
+			onClick: (e) => e.stopPropagation(),
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-10 h-1.5 bg-slate-300 rounded-full mx-auto mt-3 sm:hidden shrink-0" }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "px-5 py-4 border-b border-slate-200 flex items-center justify-between gap-3 shrink-0",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "text-lg font-bold text-slate-900",
+						children: "معرفی مصالح جدید به بناسنج"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs text-slate-500 mt-0.5",
+						children: "برای همیشه در گوشی ذخیره می‌شود و در محاسبه‌های بعدی نمایش داده خواهد شد."
+					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						onClick: onClose,
+						"aria-label": "بستن",
+						className: "min-h-[44px] min-w-[44px] rounded-xl hover:bg-slate-100 flex items-center justify-center text-slate-600 cursor-pointer",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X$1, { className: "w-5 h-5" })
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+					onSubmit: handleSave,
+					className: "p-5 overflow-y-auto space-y-5",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "rounded-2xl bg-slate-50 border border-slate-200 p-4 flex items-center justify-between gap-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-3.5 min-w-0",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+									material: {
+										id: "preview-user",
+										name: name || (category === "block" ? "بلوک جدید" : "آجر جدید"),
+										category,
+										customImageDataUrl: customImage,
+										thicknessCm: parsedT ?? 15
+									},
+									sizeClass: "w-16 h-16 rounded-2xl"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "min-w-0",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "font-bold text-base text-slate-900 truncate",
+										children: name.trim() || "نام مصالح جدید شما"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-xs text-slate-600 mt-0.5 flex items-center gap-1 tabular-nums-fa",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, { className: "w-3.5 h-3.5 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: parsedL && parsedH && parsedT ? `${formatFaNumber(parsedL, 1)}×${formatFaNumber(parsedH, 1)}×${formatFaNumber(parsedT, 1)} سانتی‌متر` : "تصویر متناسب با نام، هوشمند انتخاب می‌شود" })]
+									})]
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "shrink-0 flex flex-col gap-1.5",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+										ref: fileInputRef,
+										type: "file",
+										accept: "image/*",
+										onChange: handlePhotoUpload,
+										className: "hidden"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										type: "button",
+										onClick: () => fileInputRef.current?.click(),
+										className: "min-h-[40px] px-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-xs font-bold text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Camera, { className: "w-3.5 h-3.5 text-blue-700" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: customImage ? "تغییر عکس" : "عکس دلخواه" })]
+									}),
+									customImage && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										type: "button",
+										onClick: () => setCustomImage(void 0),
+										className: "text-[11px] text-slate-500 hover:text-slate-800 flex items-center justify-center gap-1 cursor-pointer",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RotateCcw, { className: "w-3 h-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "تصویر هوشمند" })]
+									})
+								]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+							htmlFor: "new-mat-name",
+							className: "block text-sm font-bold text-slate-800 mb-1.5",
+							children: "نام مصالح (مثلاً هبلکس ۱۵، بلوک لیکا، آجر قزاقی)"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+							id: "new-mat-name",
+							type: "text",
+							value: name,
+							onChange: (e) => handleNameChange(e.target.value),
+							placeholder: "نام مصالح را بنویسید...",
+							className: "w-full min-h-[50px] rounded-xl border border-slate-300 bg-white px-4 text-base font-bold text-slate-900 placeholder:font-normal placeholder:text-slate-400 focus:border-blue-600 focus:outline-none"
+						})] }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "block text-sm font-bold text-slate-800 mb-1.5",
+							children: "نوع مصالح"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "grid grid-cols-2 gap-2.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => {
+									setCategory("brick");
+									setCategoryManuallyPicked(true);
+								},
+								className: `min-h-[46px] rounded-xl font-bold text-sm border transition cursor-pointer ${category === "brick" ? "border-blue-700 bg-blue-700 text-white" : "border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100"}`,
+								children: "خانواده آجر / سفال"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => {
+									setCategory("block");
+									setCategoryManuallyPicked(true);
+								},
+								className: `min-h-[46px] rounded-xl font-bold text-sm border transition cursor-pointer ${category === "block" ? "border-blue-700 bg-blue-700 text-white" : "border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100"}`,
+								children: "خانواده بلوک (سیمانی / هبلکس / لیکا)"
+							})]
+						})] }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "block text-sm font-bold text-slate-800 mb-1.5",
+							children: "ابعاد واقعی هر واحد به سانتی‌متر"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "grid grid-cols-3 gap-2.5",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									className: "block text-xs font-semibold text-slate-600 mb-1",
+									children: "طول (سانت)"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+									type: "text",
+									inputMode: "decimal",
+									value: toPersianDigits(lengthCm),
+									onChange: (e) => {
+										setLengthCm(sanitizeDecimalInput(e.target.value));
+										setErrorMsg(null);
+									},
+									placeholder: "مثلاً ۶۰",
+									className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa placeholder:font-normal placeholder:text-slate-300 focus:border-blue-600 focus:outline-none"
+								})] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									className: "block text-xs font-semibold text-slate-600 mb-1",
+									children: "ارتفاع (سانت)"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+									type: "text",
+									inputMode: "decimal",
+									value: toPersianDigits(heightCm),
+									onChange: (e) => {
+										setHeightCm(sanitizeDecimalInput(e.target.value));
+										setErrorMsg(null);
+									},
+									placeholder: "مثلاً ۲۵",
+									className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa placeholder:font-normal placeholder:text-slate-300 focus:border-blue-600 focus:outline-none"
+								})] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									className: "block text-xs font-semibold text-slate-600 mb-1",
+									children: "ضخامت (سانت)"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+									type: "text",
+									inputMode: "decimal",
+									value: toPersianDigits(thicknessCm),
+									onChange: (e) => {
+										setThicknessCm(sanitizeDecimalInput(e.target.value));
+										setErrorMsg(null);
+									},
+									placeholder: "مثلاً ۱۵",
+									className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa placeholder:font-normal placeholder:text-slate-300 focus:border-blue-600 focus:outline-none"
+								})] })
+							]
+						})] }),
+						errorMsg && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							role: "alert",
+							className: "rounded-xl bg-red-50 border border-red-200 p-3.5 text-xs sm:text-sm font-semibold text-red-900",
+							children: errorMsg
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2.5 pt-1",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								type: "submit",
+								className: "flex-1 min-h-[52px] rounded-xl bg-blue-700 hover:bg-blue-600 text-white font-bold text-base flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "w-5 h-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "ذخیره همیشگی و انتخاب مصالح" })]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: onClose,
+								className: "min-h-[52px] px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm whitespace-nowrap cursor-pointer",
+								children: "انصراف"
+							})]
+						})
+					]
+				})
+			]
+		})
+	});
+};
 // src/utils/calculations.ts
 /**
 * Pure deterministic masonry calculation strictly following the BannaSanj engineering formulas.
@@ -13241,50 +13972,14 @@ function calculateWallCosts(quantities, prices) {
 		totalCost: materialCost + cementCost + sandCost + laborCost
 	};
 }
-// node_modules/react/cjs/react-jsx-runtime.production.js
-/**
-* @license React
-* react-jsx-runtime.production.js
-*
-* Copyright (c) Meta Platforms, Inc. and affiliates.
-*
-* This source code is licensed under the MIT license found in the
-* LICENSE file in the root directory of this source tree.
-*/
-var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((exports) => {
-	var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
-	var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
-	function jsxProd(type, config, maybeKey) {
-		var key = null;
-		void 0 !== maybeKey && (key = "" + maybeKey);
-		void 0 !== config.key && (key = "" + config.key);
-		if ("key" in config) {
-			maybeKey = {};
-			for (var propName in config) "key" !== propName && (maybeKey[propName] = config[propName]);
-		} else maybeKey = config;
-		config = maybeKey.ref;
-		return {
-			$$typeof: REACT_ELEMENT_TYPE,
-			type,
-			key,
-			ref: void 0 !== config ? config : null,
-			props: maybeKey
-		};
-	}
-	exports.Fragment = REACT_FRAGMENT_TYPE;
-	exports.jsx = jsxProd;
-	exports.jsxs = jsxProd;
-}));
 // src/components/CompareModal.tsx
-var import_jsx_runtime = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
-	module.exports = require_react_jsx_runtime_production();
-})))();
-var CompareModal = ({ isOpen, onClose, draft, primaryMaterialName, primaryQuantities, primaryCosts, prices, priceProfile, presetOverrides, onUpdateAlternativeUnitPrice, onSwitchPrimaryMaterial }) => {
-	const [altId, setAltId] = (0, import_react.useState)(() => getDefaultAlternativeMaterialId(draft.selectedMaterialId));
+var CompareModal = ({ isOpen, onClose, draft, userMaterials, primaryPreset, primaryMaterialName, primaryQuantities, primaryCosts, prices, priceProfile, presetOverrides, onUpdateAlternativeUnitPrice, onSwitchPrimaryMaterial }) => {
+	const [altId, setAltId] = (0, import_react.useState)(() => getDefaultAlternativeMaterialId(draft.selectedMaterialId, userMaterials));
 	if (!isOpen) return null;
-	const availablePresets = MATERIAL_PRESETS.filter((m) => m.id !== "custom" && m.id !== draft.selectedMaterialId);
-	const effectiveAltId = altId === draft.selectedMaterialId ? getDefaultAlternativeMaterialId(draft.selectedMaterialId) : altId;
-	const altPreset = getPresetById(effectiveAltId);
+	const allMaterials = getAllMaterials(userMaterials);
+	const availablePresets = allMaterials.filter((m) => m.id !== draft.selectedMaterialId);
+	const effectiveAltId = altId === draft.selectedMaterialId || !allMaterials.some((m) => m.id === altId) ? getDefaultAlternativeMaterialId(draft.selectedMaterialId, userMaterials) : altId;
+	const altPreset = getMaterialById(effectiveAltId, userMaterials);
 	const altDims = presetOverrides[altPreset.id] ?? altPreset.actualCm;
 	const lengthNum = parsePositiveNumber(draft.lengthM) ?? 0;
 	const heightNum = parsePositiveNumber(draft.heightM) ?? 0;
@@ -13408,16 +14103,29 @@ var CompareModal = ({ isOpen, onClose, draft, primaryMaterialName, primaryQuanti
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "rounded-2xl border border-slate-200 overflow-hidden tabular-nums-fa",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "grid grid-cols-3 bg-slate-900 text-white text-xs sm:text-sm font-bold p-3.5 gap-2",
+								className: "grid grid-cols-3 items-center bg-slate-900 text-white text-xs sm:text-sm font-bold p-3.5 gap-2",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "شاخص" }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-center",
-										children: primaryMaterialName
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-center flex flex-col items-center gap-1.5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+											material: {
+												...primaryPreset,
+												name: primaryMaterialName,
+												thicknessCm: primaryQuantities.unitTM * 100
+											},
+											sizeClass: "w-11 h-11 rounded-xl"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: primaryMaterialName })]
 									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-center text-blue-300",
-										children: altPreset.name
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-center text-blue-300 flex flex-col items-center gap-1.5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+											material: {
+												...altPreset,
+												thicknessCm: altDims.t
+											},
+											sizeClass: "w-11 h-11 rounded-xl"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: altPreset.name })]
 									})
 								]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -13582,7 +14290,7 @@ var CompareModal = ({ isOpen, onClose, draft, primaryMaterialName, primaryQuanti
 	});
 };
 // src/components/DesktopSummaryRail.tsx
-var DesktopSummaryRail = ({ draft, materialDisplayName, unitLabel, quantities, costs }) => {
+var DesktopSummaryRail = ({ draft, materialPreset, materialDisplayName, unitLabel, quantities, costs }) => {
 	const len = parsePositiveNumber(draft.lengthM);
 	const hgt = parsePositiveNumber(draft.heightM);
 	const thick = parsePositiveNumber(draft.wallThicknessCm);
@@ -13658,13 +14366,23 @@ var DesktopSummaryRail = ({ draft, materialDisplayName, unitLabel, quantities, c
 				className: "space-y-3 text-sm tabular-nums-fa",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center justify-between py-2 border-b border-slate-100",
+						className: "flex items-center justify-between gap-3 py-2 border-b border-slate-100",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-slate-600",
 							children: "نوع مصالح"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "font-bold text-slate-900",
-							children: materialDisplayName
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2.5 min-w-0",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+								material: {
+									...materialPreset,
+									name: materialDisplayName,
+									thicknessCm: parsePositiveNumber(draft.activeDimensionsCm.t) ?? materialPreset.actualCm.t
+								},
+								sizeClass: "w-10 h-10 rounded-xl"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-bold text-slate-900 truncate",
+								children: materialDisplayName
+							})]
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -13749,49 +14467,62 @@ function replaceSpokenPersianNumbers(text) {
 }
 /**
 * Built-in local parser used in native Android offline APK and whenever internet is unavailable.
+* Smartly matches user-created custom materials first, then built-in Iranian presets.
 */
-function parseSentenceLocally(rawText) {
+function parseSentenceLocally(rawText, userMaterials = []) {
 	const normalized = normalizeNumericInput(replaceSpokenPersianNumbers(rawText));
 	let lengthM = null;
 	let heightM = null;
 	let wallThicknessCm = null;
 	let materialPresetId = null;
 	const openings = [];
-	if (/بلوک/.test(normalized)) {
-		if (/20/.test(normalized)) {
-			materialPresetId = "block-20";
-			wallThicknessCm = 20;
-		} else if (/15/.test(normalized)) {
-			materialPresetId = "block-15";
-			wallThicknessCm = 15;
-		} else {
-			materialPresetId = "block-10";
-			if (/10/.test(normalized)) wallThicknessCm = 10;
-		}
-	} else if (/فشاری|گری/.test(normalized)) {
-		materialPresetId = "feshari";
-		wallThicknessCm = 11;
-	} else if (/لفتون|ده\s*سوراخ|بهمنی/.test(normalized)) {
-		materialPresetId = "laftoon";
-		wallThicknessCm = 10;
-	} else if (/سفال|تیغه/.test(normalized)) {
-		if (/20/.test(normalized)) {
-			materialPresetId = "sofal-20";
-			wallThicknessCm = 20;
-		} else if (/15/.test(normalized)) {
-			materialPresetId = "sofal-15";
-			wallThicknessCm = 15;
-		} else {
-			materialPresetId = "sofal-10";
-			if (/10/.test(normalized)) wallThicknessCm = 10;
+	let cleanedForWall = normalized;
+	const sortedCustom = [...userMaterials].sort((a, b) => b.name.length - a.name.length);
+	for (const customMat of sortedCustom) {
+		const normalizedMatName = normalizeNumericInput(customMat.name.trim());
+		if (normalizedMatName.length >= 2 && cleanedForWall.includes(normalizedMatName)) {
+			materialPresetId = customMat.id;
+			wallThicknessCm = customMat.recommendedWallThicknessCm;
+			cleanedForWall = cleanedForWall.replace(normalizedMatName, " ");
+			break;
 		}
 	}
-	const thickMatch = normalized.match(/(?:ضخامت|عرض)\s*(\d+(?:\.\d+)?)\s*(?:سانت|cm)?/);
+	if (!materialPresetId) {
+		if (/بلوک/.test(cleanedForWall)) {
+			if (/20/.test(cleanedForWall)) {
+				materialPresetId = "block-20";
+				wallThicknessCm = 20;
+			} else if (/15/.test(cleanedForWall)) {
+				materialPresetId = "block-15";
+				wallThicknessCm = 15;
+			} else {
+				materialPresetId = "block-10";
+				if (/10/.test(cleanedForWall)) wallThicknessCm = 10;
+			}
+		} else if (/فشاری|گری/.test(cleanedForWall)) {
+			materialPresetId = "feshari";
+			wallThicknessCm = 11;
+		} else if (/لفتون|ده\s*سوراخ|بهمنی/.test(cleanedForWall)) {
+			materialPresetId = "laftoon";
+			wallThicknessCm = 10;
+		} else if (/سفال|تیغه/.test(cleanedForWall)) {
+			if (/20/.test(cleanedForWall)) {
+				materialPresetId = "sofal-20";
+				wallThicknessCm = 20;
+			} else if (/15/.test(cleanedForWall)) {
+				materialPresetId = "sofal-15";
+				wallThicknessCm = 15;
+			} else {
+				materialPresetId = "sofal-10";
+				if (/10/.test(cleanedForWall)) wallThicknessCm = 10;
+			}
+		}
+	}
+	const thickMatch = cleanedForWall.match(/(?:ضخامت|عرض)\s*(\d+(?:\.\d+)?)\s*(?:سانت|cm)?/);
 	if (thickMatch) wallThicknessCm = Number(thickMatch[1]);
 	const openingRegex = /(پنجره|درب)\s*(\d+(?:\.\d+)?)\s*(?:در|×|\*|x|X)\s*(\d+(?:\.\d+)?)/g;
 	let opMatch;
-	let cleanedForWall = normalized;
-	while ((opMatch = openingRegex.exec(normalized)) !== null) {
+	while ((opMatch = openingRegex.exec(cleanedForWall)) !== null) {
 		const w = Number(opMatch[2]);
 		const h = Number(opMatch[3]);
 		if (w > 0 && h > 0) {
@@ -13825,12 +14556,7 @@ function parseSentenceLocally(rawText) {
 		usedOfflineFallback: true
 	};
 }
-/**
-* Parses natural language Persian input:
-* - On native Android APK or when offline: uses instant built-in Persian parser.
-* - On web when online: uses server-side Gemini endpoint (/api/parse-wall) with local fallback.
-*/
-async function parseNaturalLanguageWall(text) {
+async function parseNaturalLanguageWall(text, userMaterials = []) {
 	const trimmed = text.trim();
 	if (!trimmed) return {
 		parsed: false,
@@ -13841,19 +14567,26 @@ async function parseNaturalLanguageWall(text) {
 		openings: [],
 		summaryFa: ""
 	};
-	if (Capacitor.isNativePlatform() || typeof navigator !== "undefined" && !navigator.onLine) return parseSentenceLocally(trimmed);
+	if (Capacitor.isNativePlatform() || typeof navigator !== "undefined" && !navigator.onLine) return parseSentenceLocally(trimmed, userMaterials);
 	try {
 		const response = await fetch("/api/parse-wall", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ text: trimmed })
+			body: JSON.stringify({
+				text: trimmed,
+				userMaterials: userMaterials.map((m) => ({
+					id: m.id,
+					name: m.name,
+					thicknessCm: m.recommendedWallThicknessCm
+				}))
+			})
 		});
-		if (!response.ok) return parseSentenceLocally(trimmed);
+		if (!response.ok) return parseSentenceLocally(trimmed, userMaterials);
 		const data = await response.json();
 		if (data && typeof data.parsed === "boolean") return data;
-		return parseSentenceLocally(trimmed);
+		return parseSentenceLocally(trimmed, userMaterials);
 	} catch {
-		return parseSentenceLocally(trimmed);
+		return parseSentenceLocally(trimmed, userMaterials);
 	}
 }
 // src/components/DimensionsStep.tsx
@@ -13863,7 +14596,7 @@ var THICKNESS_QUICK_OPTIONS = [
 	20,
 	35
 ];
-var DimensionsStep = ({ draft, presetOverrides, onChangeDraft, onNextStep }) => {
+var DimensionsStep = ({ draft, userMaterials, presetOverrides, onChangeDraft, onNextStep, onBackToServices }) => {
 	const [nlText, setNlText] = (0, import_react.useState)("");
 	const [isParsing, setIsParsing] = (0, import_react.useState)(false);
 	const [nlFeedback, setNlFeedback] = (0, import_react.useState)(null);
@@ -13888,7 +14621,7 @@ var DimensionsStep = ({ draft, presetOverrides, onChangeDraft, onNextStep }) => 
 		setIsParsing(true);
 		setNlFeedback(null);
 		setValidationError(null);
-		const result = await parseNaturalLanguageWall(trimmed);
+		const result = await parseNaturalLanguageWall(trimmed, userMaterials);
 		setIsParsing(false);
 		if (!result.parsed) {
 			setNlFeedback({
@@ -13902,9 +14635,10 @@ var DimensionsStep = ({ draft, presetOverrides, onChangeDraft, onNextStep }) => 
 			if (result.lengthM && result.lengthM > 0) next.lengthM = String(result.lengthM);
 			if (result.heightM && result.heightM > 0) next.heightM = String(result.heightM);
 			if (result.materialPresetId) {
-				const preset = getPresetById(result.materialPresetId);
+				const preset = getMaterialById(result.materialPresetId, userMaterials);
 				const dims = presetOverrides[preset.id] ?? preset.actualCm;
 				next.selectedMaterialId = preset.id;
+				next.customMaterialName = preset.name;
 				next.activeDimensionsCm = {
 					l: String(dims.l),
 					h: String(dims.h),
@@ -13925,7 +14659,7 @@ var DimensionsStep = ({ draft, presetOverrides, onChangeDraft, onNextStep }) => 
 		if (result.lengthM) parts.push(`طول ${formatFaNumber(result.lengthM, 2)} متر`);
 		if (result.heightM) parts.push(`ارتفاع ${formatFaNumber(result.heightM, 2)} متر`);
 		if (result.wallThicknessCm) parts.push(`ضخامت ${formatFaNumber(result.wallThicknessCm, 1)} سانتی‌متر`);
-		if (result.materialPresetId) parts.push(`مصالح ${getPresetById(result.materialPresetId).name}`);
+		if (result.materialPresetId) parts.push(`مصالح ${getMaterialById(result.materialPresetId, userMaterials).name}`);
 		setNlFeedback({
 			type: "success",
 			message: `با موفقیت پر شد: ${parts.join(" · ")}. می‌توانید مقادیر زیر را بررسی یا ویرایش کنید.`
@@ -13993,6 +14727,18 @@ var DimensionsStep = ({ draft, presetOverrides, onChangeDraft, onNextStep }) => 
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "space-y-6",
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center justify-between gap-2 text-xs sm:text-sm text-slate-600 px-1",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: ["نوع خدمات بنّایی: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+					className: "text-slate-900",
+					children: "دیوارکشی و تیغه‌چینی"
+				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					type: "button",
+					onClick: onBackToServices,
+					className: "text-blue-700 font-semibold hover:underline cursor-pointer",
+					children: "مشاهده سایر خدمات"
+				})]
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "rounded-2xl bg-white border border-slate-200 p-5 space-y-3",
 				children: [
@@ -14273,205 +15019,140 @@ var DimensionsStep = ({ draft, presetOverrides, onChangeDraft, onNextStep }) => 
 		]
 	});
 };
-// src/components/MaterialIcons.tsx
-var BrickIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.9",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	className,
-	"aria-hidden": "true",
-	children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "2.5",
-			y: "4.5",
-			width: "8.5",
-			height: "6",
-			rx: "1.2"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "13",
-			y: "4.5",
-			width: "8.5",
-			height: "6",
-			rx: "1.2"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "2.5",
-			y: "13.5",
-			width: "5",
-			height: "6",
-			rx: "1.2"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "9.5",
-			y: "13.5",
-			width: "6.5",
-			height: "6",
-			rx: "1.2"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "18",
-			y: "13.5",
-			width: "3.5",
-			height: "6",
-			rx: "1"
-		})
-	]
-});
-var BlockIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.9",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	className,
-	"aria-hidden": "true",
-	children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "2.5",
-			y: "5.5",
-			width: "19",
-			height: "13",
-			rx: "2"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "6",
-			y: "9",
-			width: "4.5",
-			height: "6",
-			rx: "0.8"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "13.5",
-			y: "9",
-			width: "4.5",
-			height: "6",
-			rx: "0.8"
-		})
-	]
-});
-var CementBagIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.9",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	className,
-	"aria-hidden": "true",
-	children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M6.5 4h11l1.5 3.5v9A3.5 3.5 0 0 1 15.5 20h-7A3.5 3.5 0 0 1 5 16.5v-9L6.5 4Z" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M5.5 7.5h13" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M9.5 12h5" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M10.5 15h3" })
-	]
-});
-var SandPileIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.9",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	className,
-	"aria-hidden": "true",
-	children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M2.5 18.5 10.2 8.2a2.3 2.3 0 0 1 3.6 0l7.7 10.3H2.5Z" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
-			cx: "12",
-			cy: "13.5",
-			r: "0.7",
-			fill: "currentColor"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
-			cx: "9.5",
-			cy: "15.5",
-			r: "0.7",
-			fill: "currentColor"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
-			cx: "14.5",
-			cy: "15.5",
-			r: "0.7",
-			fill: "currentColor"
-		})
-	]
-});
-var MortarTubIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.9",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	className,
-	"aria-hidden": "true",
-	children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 11h18l-2 8H5l-2-8Z" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M6.5 11c1.2-2.2 3.2-3.5 5.5-3.5s4.3 1.3 5.5 3.5" })]
-});
-var WallAreaIcon = ({ className = "w-6 h-6" }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.9",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	className,
-	"aria-hidden": "true",
-	children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
-			x: "3",
-			y: "4",
-			width: "18",
-			height: "16",
-			rx: "2"
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 9.5h18" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 14.5h18" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M9 4v5.5" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M15 9.5v5" }),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M10 14.5V20" })
-	]
-});
 // src/components/HomeScreen.tsx
-var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEstimate, onOpenSavedList, onOpenSavedEstimate, onOpenPriceProfile, isInstallable, isInstalled, isIOS, onInstallApp }) => {
+var HomeScreen = ({ savedEstimates, priceProfile, userMaterials, hasActiveDraft, onStartNewEstimate, onOpenSavedList, onOpenSavedEstimate, onOpenPriceProfile, onOpenAddMaterialModal, isInstallable, isInstalled, isIOS, onInstallApp }) => {
+	const isNativePlatform = Capacitor.isNativePlatform();
 	const [showAboutModal, setShowAboutModal] = (0, import_react.useState)(false);
 	const [showIOSGuide, setShowIOSGuide] = (0, import_react.useState)(false);
+	const [selectedUpcomingService, setSelectedUpcomingService] = (0, import_react.useState)(null);
 	const savedPricesCount = Object.values(priceProfile.unitPricesByMaterialId).filter(Boolean).length + (priceProfile.pricePerCementBag ? 1 : 0) + (priceProfile.pricePerKgSand ? 1 : 0) + (priceProfile.laborPerM2 ? 1 : 0);
 	const recentSaved = savedEstimates.slice(0, 3);
+	const upcomingServices = CONSTRUCTION_SERVICES.filter((s) => !s.isActive);
+	const showcaseMaterials = [
+		BUILT_IN_MATERIAL_PRESETS[3],
+		BUILT_IN_MATERIAL_PRESETS[4],
+		BUILT_IN_MATERIAL_PRESETS[0],
+		BUILT_IN_MATERIAL_PRESETS[7]
+	];
+	const getUpcomingIcon = (id) => {
+		switch (id) {
+			case "plaster-undercoat":
+			case "whitewash-finish": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PaintBucket, { className: "w-5 h-5" });
+			case "roofing-slab": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layers, { className: "w-5 h-5" });
+			default: return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HardHat, { className: "w-5 h-5" });
+		}
+	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "space-y-6",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "rounded-3xl bg-slate-900 p-6 sm:p-8 text-white",
+				className: "space-y-4",
 				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-sm text-slate-300 mb-2",
-						children: "ویژه بنّا، سرکارگر و مالک · کارکرد کاملاً آفلاین"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-						className: "text-2xl sm:text-3xl font-bold leading-snug text-balance mb-3",
-						children: "برآورد دقیق آجر، بلوک، سیمان، ماسه و هزینه دیوارچینی"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mb-6",
-						children: "ابعاد دیوار را وارد کنید، نوع آجر یا بلوک را انتخاب کنید و لیست کامل مصالح و پیش‌فاکتور ریالی (تومان) را آماده دریافت و اشتراک‌گذاری کنید."
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex flex-wrap items-baseline justify-between gap-2",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+							className: "text-2xl sm:text-3xl font-extrabold text-slate-900",
+							children: "انتخاب خدمات بنّایی"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm text-slate-600 mt-1",
+							children: "نوع عملیات ساختمانی را برای برآورد دقیق مصالح و هزینه انتخاب کنید."
+						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-xs text-slate-500",
+							children: "کارکرد کاملاً آفلاین"
+						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex flex-col sm:flex-row items-stretch sm:items-center gap-3",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-							type: "button",
-							onClick: () => onStartNewEstimate(true),
-							className: "min-h-[52px] px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 active:scale-[0.99] transition text-white font-bold text-base flex items-center justify-center gap-2.5 whitespace-nowrap shrink-0 cursor-pointer",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "w-5 h-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "محاسبه جدید دیوار" })]
-						}), hasActiveDraft && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-							type: "button",
-							onClick: () => onStartNewEstimate(false),
-							className: "min-h-[52px] px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/15 active:scale-[0.99] transition text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RotateCcw, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "ادامه محاسبه قبلی" })]
+						className: "rounded-3xl bg-slate-900 p-6 sm:p-7 text-white space-y-5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex flex-col sm:flex-row sm:items-start justify-between gap-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "space-y-2 max-w-xl",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "text-xs text-blue-300 font-semibold flex items-center gap-1.5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(WallAreaIcon, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "خدمات فعال · فاز اول بناسنج" })]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										className: "text-2xl sm:text-3xl font-extrabold leading-snug text-balance",
+										children: "دیوارکشی و تیغه‌چینی (آجر و بلوک)"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-sm sm:text-base text-slate-300 leading-relaxed",
+										children: "محاسبه تعداد آجر سفال، فشاری، لفتون، بلوک سیمانی یا مصالح دلخواه شما، به همراه سیمان، ماسه و پیش‌فاکتور کامل به تومان."
+									})
+								]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "flex items-center gap-2 shrink-0",
+								children: showcaseMaterials.map((mat) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+									material: mat,
+									sizeClass: "w-12 h-12 sm:w-14 sm:h-14 rounded-xl"
+								}, mat.id))
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									type: "button",
+									onClick: () => onStartNewEstimate(true),
+									className: "min-h-[52px] px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 active:scale-[0.99] transition text-white font-bold text-base flex items-center justify-center gap-2.5 whitespace-nowrap shrink-0 cursor-pointer",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "w-5 h-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "شروع محاسبه دیوارکشی" })]
+								}),
+								hasActiveDraft && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									type: "button",
+									onClick: () => onStartNewEstimate(false),
+									className: "min-h-[52px] px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/15 active:scale-[0.99] transition text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RotateCcw, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "ادامه محاسبه قبلی" })]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									type: "button",
+									onClick: onOpenAddMaterialModal,
+									className: "min-h-[52px] px-4 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition text-slate-200 font-semibold text-sm flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "معرفی مصالح جدید" })]
+								})
+							]
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "space-y-2.5 pt-2",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+								className: "text-base font-bold text-slate-800",
+								children: "سایر خدمات بنّایی (فازهای بعدی)"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-xs text-slate-500",
+								children: "در حال توسعه"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3",
+							children: upcomingServices.map((srv) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								type: "button",
+								onClick: () => setSelectedUpcomingService(srv),
+								className: "text-right rounded-2xl bg-white border border-slate-200 p-4 hover:border-slate-300 active:scale-[0.99] transition flex items-start gap-3.5 cursor-pointer",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "w-10 h-10 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center shrink-0 mt-0.5",
+									children: getUpcomingIcon(srv.id)
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "min-w-0 flex-1 space-y-1",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "flex items-center justify-between gap-2",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+												className: "font-bold text-sm sm:text-base text-slate-800 truncate",
+												children: srv.title
+											})
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs text-slate-500 leading-relaxed line-clamp-2",
+											children: srv.shortDesc
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "text-[11px] font-semibold text-amber-700 flex items-center gap-1 pt-0.5",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "w-3 h-3 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "در حال توسعه · مشاهده جزئیات" })]
+										})
+									]
+								})]
+							}, srv.id))
 						})]
 					})
 				]
@@ -14482,7 +15163,7 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: onOpenSavedList,
-						className: "text-right rounded-2xl bg-white border border-slate-200 p-5 hover:border-slate-300 active:scale-[0.99] transition flex flex-col justify-between min-h-[132px] cursor-pointer",
+						className: "text-right rounded-2xl bg-white border border-slate-200 p-5 hover:border-slate-300 active:scale-[0.99] transition flex flex-col justify-between min-h-[126px] cursor-pointer",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-between w-full mb-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -14490,17 +15171,17 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BookmarkCheck, { className: "w-6 h-6" })
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "w-5 h-5 text-slate-400" })]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-							className: "text-lg font-bold text-slate-900 mb-1",
-							children: "محاسبه‌های ذخیره‌شده"
+							className: "text-base font-bold text-slate-900 mb-1",
+							children: "پروژه‌های ذخیره‌شده"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-sm text-slate-600 tabular-nums-fa",
+							className: "text-xs sm:text-sm text-slate-600 tabular-nums-fa",
 							children: savedEstimates.length > 0 ? `${formatFaNumber(savedEstimates.length, 0)} پروژه ذخیره‌شده در گوشی` : "هنوز پروژه‌ای ذخیره نکرده‌اید"
 						})] })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: onOpenPriceProfile,
-						className: "text-right rounded-2xl bg-white border border-slate-200 p-5 hover:border-slate-300 active:scale-[0.99] transition flex flex-col justify-between min-h-[132px] cursor-pointer",
+						className: "text-right rounded-2xl bg-white border border-slate-200 p-5 hover:border-slate-300 active:scale-[0.99] transition flex flex-col justify-between min-h-[126px] cursor-pointer",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-between w-full mb-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -14508,17 +15189,17 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Wallet, { className: "w-6 h-6" })
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "w-5 h-5 text-slate-400" })]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-							className: "text-lg font-bold text-slate-900 mb-1",
-							children: "دفترچه قیمت مصالح"
+							className: "text-base font-bold text-slate-900 mb-1",
+							children: "دفترچه قیمت و مصالح من"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-sm text-slate-600 tabular-nums-fa",
-							children: savedPricesCount > 0 ? `${formatFaNumber(savedPricesCount, 0)} ردیف قیمت ذخیره‌شده توسط شما` : "ثبت قیمت آجر، سیمان و ماسه برای استفاده بعدی"
+							className: "text-xs sm:text-sm text-slate-600 tabular-nums-fa",
+							children: userMaterials.length > 0 || savedPricesCount > 0 ? `${formatFaNumber(userMaterials.length, 0)} مصالح سفارشی · ${formatFaNumber(savedPricesCount, 0)} قیمت ثبت‌شده` : "ثبت مصالح اختصاصی و قیمت روز مصالح"
 						})] })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: () => setShowAboutModal(true),
-						className: "text-right rounded-2xl bg-white border border-slate-200 p-5 hover:border-slate-300 active:scale-[0.99] transition flex flex-col justify-between min-h-[132px] cursor-pointer",
+						className: "text-right rounded-2xl bg-white border border-slate-200 p-5 hover:border-slate-300 active:scale-[0.99] transition flex flex-col justify-between min-h-[126px] cursor-pointer",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-between w-full mb-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -14526,33 +15207,51 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Info, { className: "w-6 h-6" })
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "w-5 h-5 text-slate-400" })]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-							className: "text-lg font-bold text-slate-900 mb-1",
+							className: "text-base font-bold text-slate-900 mb-1",
 							children: "درباره بناسنج و راهنما"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-sm text-slate-600",
+							className: "text-xs sm:text-sm text-slate-600",
 							children: "روش محاسبه مصالح و نکات مهم اجرایی"
 						})] })]
 					})
 				]
 			}),
-			!isInstalled && (isInstallable || isIOS) && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+			!isNativePlatform && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "rounded-2xl bg-white border border-slate-200 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "text-base font-bold text-slate-900 mb-1",
-					children: "نصب بناسنج روی صفحه اصلی گوشی"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-sm text-slate-600",
-					children: "بدون نیاز به اینترنت سر ساختمان، همیشه به محاسبه‌گر مصالح دسترسی داشته باشید."
-				})] }), isInstallable ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-					type: "button",
-					onClick: onInstallApp,
-					className: "min-h-[48px] px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "نصب اپلیکیشن" })]
-				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-					type: "button",
-					onClick: () => setShowIOSGuide(true),
-					className: "min-h-[48px] px-5 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-900 text-sm font-semibold flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "راهنمای نصب در آیفون" })]
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-start gap-3.5",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Smartphone, { className: "w-6 h-6" })
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "text-base font-bold text-slate-900 mb-1",
+						children: "دانلود فایل نصب اندروید (APK) بناسنج"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs sm:text-sm text-slate-600 leading-relaxed",
+						children: "فایل نصبی آماده گوشی‌های اندروید؛ پس از نصب کاملاً آفلاین و بدون نیاز به اینترنت کار می‌کند."
+					})] })]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-wrap items-center gap-2.5 w-full sm:w-auto shrink-0",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "/apk/BannaSanj-v1.1.apk",
+							download: "BannaSanj-v1.1.apk",
+							className: "flex-1 sm:flex-initial min-h-[48px] px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-bold flex items-center justify-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "دانلود مستقیم فایل APK" })]
+						}),
+						!isInstalled && isInstallable && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: onInstallApp,
+							className: "min-h-[48px] px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "نصب وب‌اپ" })
+						}),
+						!isInstalled && !isInstallable && isIOS && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: () => setShowIOSGuide(true),
+							className: "min-h-[48px] px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "راهنمای آیفون" })
+						})
+					]
 				})]
 			}),
 			recentSaved.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
@@ -14582,6 +15281,11 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "text-xs text-slate-500 mt-1 flex flex-wrap items-center gap-1.5 tabular-nums-fa",
 								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "دیوارکشی" }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										"aria-hidden": "true",
+										children: "·"
+									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: est.materialName }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										"aria-hidden": "true",
@@ -14608,51 +15312,57 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 					}, est.id))
 				})]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "rounded-2xl bg-white border border-slate-200 p-5",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-						className: "text-base font-bold text-slate-900 mb-4",
-						children: "چیزی که بناسنج در ۵ گام ساده برایتان حساب می‌کند"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "rounded-xl bg-slate-50 p-3.5 flex items-center gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrickIcon, { className: "w-6 h-6 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-semibold text-slate-800",
-									children: "تعداد آجر و بلوک"
-								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "rounded-xl bg-slate-50 p-3.5 flex items-center gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CementBagIcon, { className: "w-6 h-6 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-semibold text-slate-800",
-									children: "کیسه سیمان ۵۰ کیلویی"
-								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "rounded-xl bg-slate-50 p-3.5 flex items-center gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SandPileIcon, { className: "w-6 h-6 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-semibold text-slate-800",
-									children: "ماسه به کیلو و تن"
-								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "rounded-xl bg-slate-50 p-3.5 flex items-center gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileSpreadsheet, { className: "w-6 h-6 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-semibold text-slate-800",
-									children: "پیش‌فاکتور PDF و واتساپ"
-								})]
-							})
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "mt-4 rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed",
-						children: MANDATORY_DISCLAIMER
-					})
-				]
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+				className: "rounded-2xl bg-slate-100 border border-slate-200 p-4 text-xs sm:text-sm text-slate-700 leading-relaxed",
+				children: MANDATORY_DISCLAIMER
+			}),
+			selectedUpcomingService && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "fixed inset-0 z-50 bg-black/55 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4",
+				onClick: () => setSelectedUpcomingService(null),
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "w-full sm:max-w-md bg-white rounded-t-3xl sm:rounded-3xl p-6 space-y-4",
+					onClick: (e) => e.stopPropagation(),
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-10 h-1.5 bg-slate-300 rounded-full mx-auto sm:hidden" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "text-xs font-bold text-amber-700 flex items-center gap-1.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "این بخش در حال توسعه است (فازهای بعدی بناسنج)" })]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "text-xl font-bold text-slate-900",
+							children: selectedUpcomingService.title
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm text-slate-600 leading-relaxed",
+							children: selectedUpcomingService.upcomingDetails
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-700 leading-relaxed",
+							children: [
+								"در حال حاضر بخش ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "«دیوارکشی و تیغه‌چینی (آجر و بلوک)»" }),
+								" به طور کامل فعال و آماده محاسبه است."
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2.5 pt-1",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => {
+									setSelectedUpcomingService(null);
+									onStartNewEstimate(true);
+								},
+								className: "flex-1 min-h-[48px] rounded-xl bg-blue-700 hover:bg-blue-600 text-white font-bold text-sm cursor-pointer",
+								children: "ورود به محاسبه دیوارکشی"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => setSelectedUpcomingService(null),
+								className: "min-h-[48px] px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm cursor-pointer",
+								children: "بستن"
+							})]
+						})
+					]
+				})
 			}),
 			showAboutModal && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4",
@@ -14668,17 +15378,17 @@ var HomeScreen = ({ savedEstimates, priceProfile, hasActiveDraft, onStartNewEsti
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-sm text-slate-700 leading-relaxed",
-							children: "«بناسنج» ابزاری ساده و آفلاین برای بنّاها، سرکارگران و مالکان در ایران است تا پیش از خرید مصالح، تعداد دقیق آجر یا بلوک، مقدار ماسه و کیسه‌های سیمان و جمع کل هزینه دیوارچینی را به تومان محاسبه کنند."
+							children: "«بناسنج» دستیار آفلاین برآورد خدمات بنّایی برای بنّاها، سرکارگران و مالکان است. در فاز اول، محاسبه کامل دیوارکشی فعال است و در فازهای بعدی گچ‌کشی، سفیدکاری، سقف‌زنی، سیمان‌کاری و کف‌سازی اضافه می‌شوند."
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "space-y-2 text-sm text-slate-700 leading-relaxed",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "font-bold text-slate-900",
-									children: "مبنای محاسبات استاندارد برنامه:"
+									children: "مبنای محاسبات دیوارکشی:"
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "۱. مساحت خالص پس از کسر در و پنجره‌ها محاسبه می‌شود." }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "۲. تعداد واحد مصالح بر اساس ابعاد واقعی آجر یا بلوک، ضخامت بند ملات و درصد پرت (پیش‌فرض ۵٪) به بالا گرد می‌شود." }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "۲. تعداد واحد مصالح بر اساس ابعاد واقعی آجر یا بلوک (پیش‌فرض یا مصالح جدیدی که خودتان معرفی کرده‌اید)، ضخامت بند ملات و درصد پرت به بالا گرد می‌شود." }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "۳. حجم ملات خشک با ضریب تراکم ۱٫۳۳ نسبت به ملات تر و وزن مخصوص سیمان ۱۴۴۰ و ماسه ۱۶۰۰ کیلوگرم بر متر مکعب حساب می‌شود." })
 							]
 						}),
@@ -14874,10 +15584,10 @@ var Encoding;
 	Encoding["UTF16"] = "utf16";
 })(Encoding || (Encoding = {}));
 // node_modules/@capacitor/filesystem/dist/esm/index.js
-var Filesystem = registerPlugin("Filesystem", { web: () => __vitePreload(() => import("./web-DEsu_6gG.js").then((m) => new m.FilesystemWeb()), []) });
+var Filesystem = registerPlugin("Filesystem", { web: () => __vitePreload(() => import("./web-CFQHy1Mv.js").then((m) => new m.FilesystemWeb()), []) });
 f$1();
 // node_modules/@capacitor/share/dist/esm/index.js
-var Share = registerPlugin("Share", { web: () => __vitePreload(() => import("./web-Bp5h2NMs.js").then((m) => new m.ShareWeb()), []) });
+var Share = registerPlugin("Share", { web: () => __vitePreload(() => import("./web-CtIyS_7T.js").then((m) => new m.ShareWeb()), []) });
 // node_modules/@babel/runtime/helpers/esm/typeof.js
 function _typeof(o) {
 	"@babel/helpers - typeof";
@@ -34220,7 +34930,7 @@ function le() {
 	}, t.allowFsRead = void 0, t.loadImageFile = t.loadFile;
 }(E.API), function(e) {
 	function r() {
-		return (i.html2canvas ? Promise.resolve(i.html2canvas) : __vitePreload(() => import("./html2canvas-COc918jl.js").then((m) => /* @__PURE__ */ __toESM(m.default)), [])).catch(function(t) {
+		return (i.html2canvas ? Promise.resolve(i.html2canvas) : __vitePreload(() => import("./html2canvas-fRfPfDap.js").then((m) => /* @__PURE__ */ __toESM(m.default)), [])).catch(function(t) {
 			return Promise.reject(/* @__PURE__ */ new Error("Could not load html2canvas: " + t));
 		}).then(function(t) {
 			return t.default ? t.default : t;
@@ -35387,7 +36097,7 @@ function le() {
 		ignoreAnimation: !0,
 		ignoreDimensions: !0
 	}, d = this;
-	return (i.canvg ? Promise.resolve(i.canvg) : __vitePreload(() => import("./index.es-BKlSTbMZ.js"), [])).catch(function(t) {
+	return (i.canvg ? Promise.resolve(i.canvg) : __vitePreload(() => import("./index.es-iUnJB1z1.js"), [])).catch(function(t) {
 		return Promise.reject(/* @__PURE__ */ new Error("Could not load canvg: " + t));
 	}).then(function(t) {
 		return t.default ? t.default : t;
@@ -39142,18 +39852,30 @@ var MIX_RATIO_OPTIONS = [
 		desc: "کم‌سیمان"
 	}
 ];
-var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverride, onResetPresetOverride, onBack, onNext }) => {
+var MaterialStep = ({ draft, userMaterials, usageStats, presetOverrides, onChangeDraft, onSavePresetOverride, onResetPresetOverride, onOpenAddMaterialModal, onDeleteUserMaterial, onBack, onNext }) => {
 	const [filterCat, setFilterCat] = (0, import_react.useState)("all");
-	const [showDimensionEditor, setShowDimensionEditor] = (0, import_react.useState)(draft.selectedMaterialId === "custom");
+	const [showDimensionEditor, setShowDimensionEditor] = (0, import_react.useState)(false);
+	const [confirmDeleteMat, setConfirmDeleteMat] = (0, import_react.useState)(null);
 	const [errorMsg, setErrorMsg] = (0, import_react.useState)(null);
-	const selectedPreset = getPresetById(draft.selectedMaterialId);
+	const allMaterials = getAllMaterials(userMaterials);
+	const selectedPreset = getMaterialById(draft.selectedMaterialId, userMaterials);
 	const hasCustomOverride = Boolean(presetOverrides[selectedPreset.id]);
-	const filteredPresets = MATERIAL_PRESETS.filter((m) => filterCat === "all" ? true : m.category === filterCat);
+	const filteredPresets = allMaterials.filter((m) => {
+		if (filterCat === "all") return true;
+		if (filterCat === "user") return !m.isBuiltIn;
+		return m.category === filterCat;
+	}).sort((a, b) => {
+		if (a.isBuiltIn !== b.isBuiltIn) return a.isBuiltIn ? 1 : -1;
+		const countDiff = (usageStats[b.id]?.count ?? 0) - (usageStats[a.id]?.count ?? 0);
+		if (countDiff !== 0) return countDiff;
+		return 0;
+	});
 	const handleSelectMaterial = (preset) => {
 		const savedDims = presetOverrides[preset.id] ?? preset.actualCm;
 		onChangeDraft((prev) => ({
 			...prev,
 			selectedMaterialId: preset.id,
+			customMaterialName: preset.name,
 			wallThicknessCm: String(preset.recommendedWallThicknessCm),
 			activeDimensionsCm: {
 				l: String(savedDims.l),
@@ -39161,7 +39883,6 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 				t: String(savedDims.t)
 			}
 		}));
-		if (preset.id === "custom") setShowDimensionEditor(true);
 		setErrorMsg(null);
 	};
 	const handleDimensionChange = (axis, rawValue) => {
@@ -39174,7 +39895,7 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 			const lNum = parsePositiveNumber(nextDims.l);
 			const hNum = parsePositiveNumber(nextDims.h);
 			const tNum = parsePositiveNumber(nextDims.t);
-			if (lNum && hNum && tNum && prev.selectedMaterialId !== "custom") onSavePresetOverride(prev.selectedMaterialId, {
+			if (lNum && hNum && tNum) onSavePresetOverride(prev.selectedMaterialId, {
 				l: lNum,
 				h: hNum,
 				t: tNum
@@ -39233,74 +39954,108 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 						className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 							className: "text-lg font-bold text-slate-900",
-							children: "۱. نوع آجر یا بلوک"
+							children: "۱. انتخاب آجر یا بلوک"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-sm text-slate-600 mt-0.5",
-							children: "مصالح دیوار را انتخاب کنید. ابعاد استاندارد و واقعی هر مصالح قابل ویرایش است."
-						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "flex items-center gap-1 p-1 bg-slate-100 rounded-xl self-start",
-							children: [
-								{
-									id: "all",
-									label: "همه"
-								},
-								{
-									id: "brick",
-									label: "آجر"
-								},
-								{
-									id: "block",
-									label: "بلوک"
-								},
-								{
-									id: "custom",
-									label: "سفارشی"
-								}
-							].map((tab) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-								type: "button",
-								onClick: () => setFilterCat(tab.id),
-								className: `min-h-[40px] px-3.5 py-1.5 rounded-lg text-sm font-semibold transition whitespace-nowrap shrink-0 cursor-pointer ${filterCat === tab.id ? "bg-white text-slate-900 shadow-xs" : "text-slate-600 hover:text-slate-900"}`,
-								children: tab.label
-							}, tab.id))
+							children: "مصالح ثابت استاندارد قابل حذف نیستند؛ می‌توانید مصالح جدید با ابعاد دلخواه اضافه کنید تا برای همیشه بماند."
+						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							type: "button",
+							onClick: onOpenAddMaterialModal,
+							className: "min-h-[44px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "معرفی مصالح جدید" })]
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "flex items-center gap-1 p-1 bg-slate-100 rounded-xl overflow-x-auto",
+						children: [
+							{
+								id: "all",
+								label: "همه مصالح"
+							},
+							{
+								id: "brick",
+								label: "آجر و سفال"
+							},
+							{
+								id: "block",
+								label: "بلوک"
+							},
+							{
+								id: "user",
+								label: userMaterials.length > 0 ? `مصالح من (${formatFaNumber(userMaterials.length, 0)})` : "مصالح من"
+							}
+						].map((tab) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: () => setFilterCat(tab.id),
+							className: `min-h-[40px] flex-1 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition whitespace-nowrap shrink-0 cursor-pointer ${filterCat === tab.id ? "bg-white text-slate-900 shadow-xs" : "text-slate-600 hover:text-slate-900"}`,
+							children: tab.label
+						}, tab.id))
+					}),
+					filteredPresets.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-2xl bg-slate-50 border border-slate-200 p-6 text-center space-y-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm font-semibold text-slate-700",
+							children: "هنوز مصالح اختصاصی جدیدی معرفی نکرده‌اید."
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							type: "button",
+							onClick: onOpenAddMaterialModal,
+							className: "min-h-[46px] px-5 rounded-xl bg-blue-700 hover:bg-blue-600 text-white text-sm font-bold inline-flex items-center gap-1.5 cursor-pointer",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "افزودن اولین مصالح اختصاصی" })]
+						})]
+					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
 						children: filteredPresets.map((preset) => {
 							const isSelected = draft.selectedMaterialId === preset.id;
 							const currentActual = presetOverrides[preset.id] ?? preset.actualCm;
-							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-								type: "button",
+							const usedCount = usageStats[preset.id]?.count ?? 0;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								onClick: () => handleSelectMaterial(preset),
-								className: `text-right rounded-2xl p-4 border transition flex items-start justify-between gap-3 cursor-pointer ${isSelected ? "border-blue-700 bg-blue-50/50 ring-1 ring-blue-700" : "border-slate-200 bg-white hover:border-slate-300"}`,
+								role: "button",
+								tabIndex: 0,
+								onKeyDown: (e) => {
+									if (e.key === "Enter" || e.key === " ") {
+										e.preventDefault();
+										handleSelectMaterial(preset);
+									}
+								},
+								className: `text-right rounded-2xl p-3.5 border transition flex items-start justify-between gap-3 cursor-pointer ${isSelected ? "border-blue-700 bg-blue-50/50 ring-1 ring-blue-700" : "border-slate-200 bg-white hover:border-slate-300"}`,
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "flex items-start gap-3 min-w-0",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: `w-11 h-11 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${isSelected ? "bg-blue-700 text-white" : "bg-slate-100 text-slate-700"}`,
-										children: preset.category === "block" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlockIcon, { className: "w-6 h-6" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrickIcon, { className: "w-6 h-6" })
+									className: "flex items-start gap-3.5 min-w-0",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+										material: {
+											...preset,
+											thicknessCm: currentActual.t
+										},
+										sizeClass: "w-16 h-16 rounded-2xl"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "min-w-0 space-y-1",
 										children: [
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-												className: "font-bold text-base text-slate-900",
+												className: "font-bold text-base text-slate-900 leading-snug",
 												children: preset.name
 											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-												className: "text-xs text-slate-600",
-												children: preset.subtitle
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "text-[11px] text-slate-500 flex flex-wrap items-center gap-1",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: preset.isBuiltIn ? "مصالح ثابت استاندارد" : "مصالح ثبت‌شده شما" }), usedCount > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													"aria-hidden": "true",
+													children: "·"
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-blue-700 font-medium",
+													children: "پراستفاده شما"
+												})] })]
 											}),
-											preset.id !== "custom" ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 												className: "text-xs text-slate-500 pt-0.5 space-y-0.5 tabular-nums-fa",
-												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-													"ابعاد اسمی: ",
+												children: [preset.isBuiltIn && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+													"اسمی: ",
 													formatFaNumber(preset.nominalCm.l, 1),
 													"×",
 													formatFaNumber(preset.nominalCm.h, 1),
 													"×",
 													formatFaNumber(preset.nominalCm.t, 1),
-													" سانتی‌متر"
+													" سانت"
 												] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-													className: "text-slate-700 font-medium",
+													className: "text-slate-800 font-semibold",
 													children: [
 														"ابعاد واقعی: ",
 														formatFaNumber(currentActual.l, 1),
@@ -39308,18 +40063,27 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 														formatFaNumber(currentActual.h, 1),
 														"×",
 														formatFaNumber(currentActual.t, 1),
-														" سانتی‌متر"
+														" سانت"
 													]
 												})]
-											}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-												className: "text-xs text-slate-600 pt-0.5",
-												children: "وارد کردن دستی طول، ارتفاع و ضخامت"
 											})
 										]
 									})]
-								}), isSelected && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "w-6 h-6 rounded-full bg-blue-700 text-white flex items-center justify-center shrink-0",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "w-4 h-4" })
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex flex-col items-end justify-between self-stretch shrink-0",
+									children: [isSelected ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "w-6 h-6 rounded-full bg-blue-700 text-white flex items-center justify-center",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "w-4 h-4" })
+									}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "w-6 h-6" }), !preset.isBuiltIn && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+										type: "button",
+										onClick: (e) => {
+											e.stopPropagation();
+											setConfirmDeleteMat(preset);
+										},
+										"aria-label": `حذف ${preset.name}`,
+										className: "min-h-[38px] min-w-[38px] -mb-1 -ml-1 rounded-xl text-slate-400 hover:text-red-600 hover:bg-red-50 flex items-center justify-center cursor-pointer",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Trash2, { className: "w-4 h-4" })
+									})]
 								})]
 							}, preset.id);
 						})
@@ -39333,7 +40097,7 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 									className: "text-sm font-bold text-slate-900 tabular-nums-fa",
 									children: [
 										"ابعاد محاسبه «",
-										selectedPreset.id === "custom" ? draft.customMaterialName || "مصالح سفارشی" : selectedPreset.name,
+										selectedPreset.name,
 										"»:",
 										" ",
 										toPersianDigits(draft.activeDimensionsCm.l),
@@ -39345,71 +40109,55 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 										toPersianDigits(draft.activeDimensionsCm.t),
 										" سانتی‌متر"
 									]
-								}), selectedPreset.id !== "custom" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 									type: "button",
 									onClick: () => setShowDimensionEditor((v) => !v),
-									className: "min-h-[44px] px-3 rounded-lg text-sm font-semibold text-blue-700 hover:bg-blue-50 flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
+									className: "min-h-[42px] px-3 rounded-lg text-sm font-semibold text-blue-700 hover:bg-blue-50 flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlidersHorizontal, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: showDimensionEditor ? "بستن ویرایش ابعاد" : "ویرایش ابعاد این مصالح" })]
 								})]
 							}),
-							(showDimensionEditor || selectedPreset.id === "custom") && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							showDimensionEditor && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "space-y-3 pt-2 border-t border-slate-200",
-								children: [
-									selectedPreset.id === "custom" && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-										className: "block text-xs font-semibold text-slate-700 mb-1",
-										children: "نام مصالح دلخواه"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-										type: "text",
-										value: draft.customMaterialName,
-										onChange: (e) => onChangeDraft((prev) => ({
-											...prev,
-											customMaterialName: e.target.value
-										})),
-										placeholder: "مثلاً بلوک هبلکس یا آجر نما",
-										className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3.5 text-base font-semibold text-slate-900"
-									})] }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "grid grid-cols-3 gap-2.5",
-										children: [
-											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "block text-xs font-semibold text-slate-700 mb-1",
-												children: "طول (سانت)"
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: "text",
-												inputMode: "decimal",
-												value: toPersianDigits(draft.activeDimensionsCm.l),
-												onChange: (e) => handleDimensionChange("l", e.target.value),
-												className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa focus:border-blue-600 focus:outline-none"
-											})] }),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "block text-xs font-semibold text-slate-700 mb-1",
-												children: "ارتفاع (سانت)"
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: "text",
-												inputMode: "decimal",
-												value: toPersianDigits(draft.activeDimensionsCm.h),
-												onChange: (e) => handleDimensionChange("h", e.target.value),
-												className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa focus:border-blue-600 focus:outline-none"
-											})] }),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-												className: "block text-xs font-semibold text-slate-700 mb-1",
-												children: "ضخامت (سانت)"
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-												type: "text",
-												inputMode: "decimal",
-												value: toPersianDigits(draft.activeDimensionsCm.t),
-												onChange: (e) => handleDimensionChange("t", e.target.value),
-												className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa focus:border-blue-600 focus:outline-none"
-											})] })
-										]
-									}),
-									selectedPreset.id !== "custom" && hasCustomOverride && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-										type: "button",
-										onClick: handleResetDimensions,
-										className: "min-h-[44px] px-3 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 cursor-pointer",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RotateCcw, { className: "w-3.5 h-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "بازگرداندن به ابعاد استاندارد کارخانه" })]
-									})
-								]
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "grid grid-cols-3 gap-2.5",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+											className: "block text-xs font-semibold text-slate-700 mb-1",
+											children: "طول (سانت)"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+											type: "text",
+											inputMode: "decimal",
+											value: toPersianDigits(draft.activeDimensionsCm.l),
+											onChange: (e) => handleDimensionChange("l", e.target.value),
+											className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa focus:border-blue-600 focus:outline-none"
+										})] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+											className: "block text-xs font-semibold text-slate-700 mb-1",
+											children: "ارتفاع (سانت)"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+											type: "text",
+											inputMode: "decimal",
+											value: toPersianDigits(draft.activeDimensionsCm.h),
+											onChange: (e) => handleDimensionChange("h", e.target.value),
+											className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa focus:border-blue-600 focus:outline-none"
+										})] }),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+											className: "block text-xs font-semibold text-slate-700 mb-1",
+											children: "ضخامت (سانت)"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+											type: "text",
+											inputMode: "decimal",
+											value: toPersianDigits(draft.activeDimensionsCm.t),
+											onChange: (e) => handleDimensionChange("t", e.target.value),
+											className: "w-full min-h-[48px] rounded-xl border border-slate-300 bg-white px-3 text-base font-bold text-slate-900 tabular-nums-fa focus:border-blue-600 focus:outline-none"
+										})] })
+									]
+								}), hasCustomOverride && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+									type: "button",
+									onClick: handleResetDimensions,
+									className: "min-h-[42px] px-3 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 cursor-pointer",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RotateCcw, { className: "w-3.5 h-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "بازگرداندن به ابعاد اولیه" })]
+								})]
 							}),
 							thicknessWarning && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "rounded-xl bg-amber-50 border border-amber-200 p-3 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-amber-950",
@@ -39581,6 +40329,45 @@ var MaterialStep = ({ draft, presetOverrides, onChangeDraft, onSavePresetOverrid
 					className: "flex-1 min-h-[56px] rounded-2xl bg-blue-700 hover:bg-blue-600 active:scale-[0.99] transition text-white font-bold text-lg flex items-center justify-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "محاسبه مقدار مصالح" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "w-5 h-5" })]
 				})]
+			}),
+			confirmDeleteMat && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4",
+				onClick: () => setConfirmDeleteMat(null),
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "w-full sm:max-w-sm bg-white rounded-t-3xl sm:rounded-3xl p-6 space-y-4",
+					onClick: (e) => e.stopPropagation(),
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "text-lg font-bold text-slate-900",
+							children: "حذف مصالح ثبت‌شده"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+							className: "text-sm text-slate-600 leading-relaxed",
+							children: [
+								"آیا از حذف «",
+								confirmDeleteMat.name,
+								"» از فهرست مصالح خودتان مطمئن هستید؟"
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => {
+									onDeleteUserMaterial(confirmDeleteMat.id);
+									setConfirmDeleteMat(null);
+								},
+								className: "flex-1 min-h-[48px] rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm cursor-pointer",
+								children: "بله، حذف شود"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => setConfirmDeleteMat(null),
+								className: "flex-1 min-h-[48px] rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm cursor-pointer",
+								children: "انصراف"
+							})]
+						})
+					]
+				})
 			})
 		]
 	});
@@ -39657,16 +40444,26 @@ var PricingStep = ({ materialPreset, materialDisplayName, quantities, prices, co
 						children: "قیمت‌های قبلی که خودتان ثبت کرده بودید جایگذاری شدند؛ در صورت تغییر قیمت بازار، ویرایش کنید."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "space-y-1.5",
+						className: "space-y-2",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center justify-between gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
-									htmlFor: "price-unit",
-									className: "text-sm font-bold text-slate-900",
-									children: ["قیمت هر عدد ", materialDisplayName]
+								className: "flex items-center justify-between gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex items-center gap-3 min-w-0",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+										material: {
+											...materialPreset,
+											name: materialDisplayName,
+											thicknessCm: quantities.unitTM * 100
+										},
+										sizeClass: "w-11 h-11 rounded-xl"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+										htmlFor: "price-unit",
+										className: "text-sm font-bold text-slate-900 truncate",
+										children: ["قیمت هر عدد ", materialDisplayName]
+									})]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "text-xs text-slate-500 tabular-nums-fa",
+									className: "text-xs text-slate-500 tabular-nums-fa shrink-0",
 									children: [
 										"تعداد کل: ",
 										formatFaNumber(quantities.finalUnits, 0),
@@ -39707,10 +40504,10 @@ var PricingStep = ({ materialPreset, materialDisplayName, quantities, prices, co
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center justify-between gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
 									htmlFor: "price-cement",
-									className: "text-sm font-bold text-slate-900",
-									children: "قیمت هر کیسه ۵۰ کیلویی سیمان"
+									className: "text-sm font-bold text-slate-900 flex items-center gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CementBagIcon, { className: "w-5 h-5 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "قیمت هر کیسه ۵۰ کیلویی سیمان" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 									className: "text-xs text-slate-500 tabular-nums-fa",
 									children: [
@@ -39752,10 +40549,10 @@ var PricingStep = ({ materialPreset, materialDisplayName, quantities, prices, co
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex flex-wrap items-center justify-between gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
 									htmlFor: "price-sand",
-									className: "text-sm font-bold text-slate-900",
-									children: "قیمت هر کیلوگرم ماسه"
+									className: "text-sm font-bold text-slate-900 flex items-center gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SandPileIcon, { className: "w-5 h-5 text-blue-700 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "قیمت هر کیلوگرم ماسه" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "flex items-center gap-3",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
@@ -39944,9 +40741,13 @@ var ResultsStep = ({ draft, materialPreset, materialDisplayName, quantities, onO
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "rounded-2xl bg-white border border-slate-200 p-5 flex items-start gap-4",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0",
-							children: materialPreset.category === "block" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlockIcon, { className: "w-7 h-7" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrickIcon, { className: "w-7 h-7" })
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+							material: {
+								...materialPreset,
+								name: materialDisplayName,
+								thicknessCm: quantities.unitTM * 100
+							},
+							sizeClass: "w-14 h-14 rounded-2xl"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "min-w-0 tabular-nums-fa",
 							children: [
@@ -40468,9 +41269,11 @@ var SavedScreen = ({ savedEstimates, onOpenEstimate, onDeleteEstimate, onStartNe
 	});
 };
 // src/components/SettingsScreen.tsx
-var SettingsScreen = ({ priceProfile, defaultMortar, onUpdatePriceProfile, onClearAllPrices, onUpdateDefaultMortar, isInstallable, isInstalled, isIOS, onInstallApp, onShowToast }) => {
+var SettingsScreen = ({ priceProfile, userMaterials, defaultMortar, onUpdatePriceProfile, onClearAllPrices, onUpdateDefaultMortar, onOpenAddMaterialModal, onDeleteUserMaterial, isInstallable, isInstalled, isIOS, onInstallApp, onShowToast }) => {
 	const [confirmClear, setConfirmClear] = (0, import_react.useState)(false);
-	const standardPresets = MATERIAL_PRESETS.filter((p) => p.id !== "custom");
+	const [confirmDeleteMaterial, setConfirmDeleteMaterial] = (0, import_react.useState)(null);
+	const isNativePlatform = Capacitor.isNativePlatform();
+	const allMaterialsForPricing = [...userMaterials, ...BUILT_IN_MATERIAL_PRESETS];
 	const handleMaterialUnitPrice = (presetId, rawVal) => {
 		const clean = sanitizePriceInput(rawVal);
 		onUpdatePriceProfile({
@@ -40486,11 +41289,75 @@ var SettingsScreen = ({ priceProfile, defaultMortar, onUpdatePriceProfile, onCle
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 				className: "text-2xl font-bold text-slate-900",
-				children: "تنظیمات و دفترچه قیمت"
+				children: "تنظیمات، مصالح من و دفترچه قیمت"
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "text-sm text-slate-600 mt-0.5",
-				children: "قیمت مصالح منطقه خودتان را اینجا ثبت کنید تا در محاسبه‌های بعدی آماده باشد."
+				children: "مصالح جدید خودتان و قیمت مصالح منطقه را ثبت کنید تا در محاسبه‌های بعدی آماده باشند."
 			})] }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+				className: "rounded-2xl bg-white border border-slate-200 p-5 space-y-4",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-wrap items-center justify-between gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "text-lg font-bold text-slate-900",
+						children: "مصالح سفارشی معرفی‌شده توسط شما"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs text-slate-500 mt-0.5",
+						children: "مصالح جدیدی که معرفی می‌کنید همیشه در برنامه می‌مانند. مصالح پیش‌فرض برنامه ثابت و غیرقابل حذف هستند."
+					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						onClick: onOpenAddMaterialModal,
+						className: "min-h-[44px] px-4 rounded-xl bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "معرفی مصالح جدید" })]
+					})]
+				}), userMaterials.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "rounded-xl bg-slate-50 border border-slate-200 p-4 flex flex-wrap items-center justify-between gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "text-sm text-slate-600",
+						children: "هنوز مصالح سفارشی معرفی نکرده‌اید (مثلاً بلوک هبلکس، لیکا یا آجر قزاقی با ابعاد دلخواه)."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "text-xs text-slate-500 flex items-center gap-1.5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Lock, { className: "w-3.5 h-3.5 text-slate-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [formatFaNumber(BUILT_IN_MATERIAL_PRESETS.length, 0), " مصالح استاندارد برنامه فعال و ثابت است"] })]
+					})]
+				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
+					children: userMaterials.map((mat) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-xl bg-slate-50 border border-slate-200 p-3 flex items-center justify-between gap-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-3 min-w-0",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+								material: {
+									...mat,
+									thicknessCm: mat.actualCm.t
+								},
+								sizeClass: "w-12 h-12 rounded-xl"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "min-w-0",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "text-sm font-bold text-slate-900 truncate",
+									children: mat.name
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "text-xs text-slate-500 tabular-nums-fa mt-0.5",
+									children: [
+										formatFaNumber(mat.actualCm.l, 1),
+										"×",
+										formatFaNumber(mat.actualCm.h, 1),
+										"×",
+										formatFaNumber(mat.actualCm.t, 1),
+										" سانتی‌متر"
+									]
+								})]
+							})]
+						}), !mat.isBuiltIn && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: () => setConfirmDeleteMaterial(mat),
+							"aria-label": `حذف ${mat.name}`,
+							className: "min-h-[42px] min-w-[42px] rounded-xl text-slate-400 hover:text-red-600 hover:bg-red-50 flex items-center justify-center shrink-0 cursor-pointer",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Trash2, { className: "w-4 h-4" })
+						})]
+					}, mat.id))
+				})]
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "rounded-2xl bg-white border border-slate-200 p-5 space-y-5",
 				children: [
@@ -40578,19 +41445,28 @@ var SettingsScreen = ({ priceProfile, defaultMortar, onUpdatePriceProfile, onCle
 						className: "pt-3 border-t border-slate-100 space-y-3",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 							className: "text-sm font-bold text-slate-800",
-							children: "قیمت تک‌فروشی هر عدد آجر و بلوک"
+							children: "قیمت تک‌فروشی هر عدد آجر و بلوک (پیش‌فرض و سفارشی)"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
-							children: standardPresets.map((preset) => {
+							children: allMaterialsForPricing.map((preset) => {
 								const val = priceProfile.unitPricesByMaterialId[preset.id] ?? "";
 								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "flex items-center justify-between gap-3 rounded-xl bg-slate-50 border border-slate-200 px-3.5 py-2.5",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-										htmlFor: `profile-price-${preset.id}`,
-										className: "text-sm font-semibold text-slate-800 whitespace-nowrap",
-										children: preset.name
+									className: "flex items-center justify-between gap-3 rounded-xl bg-slate-50 border border-slate-200 px-3 py-2.5",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center gap-2.5 min-w-0",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialThumbnail, {
+											material: {
+												...preset,
+												thicknessCm: preset.actualCm.t
+											},
+											sizeClass: "w-10 h-10 rounded-lg"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+											htmlFor: `profile-price-${preset.id}`,
+											className: "text-sm font-semibold text-slate-800 truncate",
+											children: preset.name
+										})]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "relative w-40",
+										className: "relative w-36 shrink-0",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 											id: `profile-price-${preset.id}`,
 											type: "text",
@@ -40674,20 +41550,34 @@ var SettingsScreen = ({ priceProfile, defaultMortar, onUpdatePriceProfile, onCle
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "rounded-2xl bg-white border border-slate-200 p-5 flex flex-wrap items-center justify-between gap-4",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-					className: "text-base font-bold text-slate-900",
-					children: "نسخه آفلاین و نصب روی گوشی"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-sm text-slate-600 mt-0.5",
-					children: isInstalled ? "اپلیکیشن بناسنج روی دستگاه شما نصب است و آفلاین کار می‌کند." : isIOS ? "در مرورگر سافاری آیفون از گزینه Share و سپس Add to Home Screen استفاده کنید." : "می‌توانید بناسنج را مثل برنامه مستقل روی صفحه اصلی گوشی نصب کنید."
-				})] }), isInstalled ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-start gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center shrink-0 mt-0.5",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Smartphone, { className: "w-5 h-5" })
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						className: "text-base font-bold text-slate-900",
+						children: "نصب نسخه اندروید (APK) روی گوشی"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-sm text-slate-600 mt-0.5",
+						children: isNativePlatform ? "نسخه بومی اندروید بناسنج روی گوشی شما نصب و فعال است." : "می‌توانید فایل نصبی اندروید (APK) را دانلود و مستقیماً روی گوشی نصب کنید."
+					})] })]
+				}), isNativePlatform ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 					className: "inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "نصب شده" })]
-				}) : isInstallable && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-					type: "button",
-					onClick: onInstallApp,
-					className: "min-h-[48px] px-5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "نصب برنامه" })]
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "نسخه اندروید فعال" })]
+				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-wrap items-center gap-2.5 shrink-0",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: "/apk/BannaSanj-v1.1.apk",
+						download: "BannaSanj-v1.1.apk",
+						className: "min-h-[48px] px-5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-sm flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, { className: "w-4 h-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "دانلود فایل APK" })]
+					}), !isInstalled && isInstallable && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						onClick: onInstallApp,
+						className: "min-h-[48px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 whitespace-nowrap shrink-0 cursor-pointer",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "نصب وب‌اپ" })
+					})]
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
@@ -40699,7 +41589,7 @@ var SettingsScreen = ({ priceProfile, defaultMortar, onUpdatePriceProfile, onCle
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-sm text-slate-600 leading-relaxed",
-						children: "بناسنج برای ساده‌تر شدن برآورد اولیه خرید آجر، بلوک، سیمان و ماسه طراحی شده است. هیچ نیازی به ثبت‌نام یا اینترنت دائمی ندارد و تمام اطلاعات شما فقط در حافظه گوشی خودتان نگهداری می‌شود."
+						children: "بناسنج برای ساده‌تر شدن برآورد خدمات بنّایی طراحی شده است. در فاز اول بخش «دیوارکشی و تیغه‌چینی» فعال است و بخش‌های گچ‌کشی، سفیدکاری، سقف‌زنی، سیمان‌کاری و کف‌سازی در حال توسعه هستند. تمام اطلاعات شما بدون نیاز به اینترنت در حافظه گوشی خودتان نگهداری می‌شود."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "rounded-xl bg-amber-50 border border-amber-200 p-4 text-sm font-medium text-amber-950 leading-relaxed",
@@ -40736,6 +41626,45 @@ var SettingsScreen = ({ priceProfile, defaultMortar, onUpdatePriceProfile, onCle
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: () => setConfirmClear(false),
+								className: "flex-1 min-h-[48px] rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm cursor-pointer",
+								children: "انصراف"
+							})]
+						})
+					]
+				})
+			}),
+			confirmDeleteMaterial && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4",
+				onClick: () => setConfirmDeleteMaterial(null),
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "w-full sm:max-w-sm bg-white rounded-t-3xl sm:rounded-3xl p-6 space-y-4",
+					onClick: (e) => e.stopPropagation(),
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "text-lg font-bold text-slate-900",
+							children: "حذف مصالح سفارشی"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+							className: "text-sm text-slate-600 leading-relaxed",
+							children: [
+								"آیا می‌خواهید «",
+								confirmDeleteMaterial.name,
+								"» از فهرست مصالح سفارشی شما حذف شود؟"
+							]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => {
+									onDeleteUserMaterial(confirmDeleteMaterial.id);
+									setConfirmDeleteMaterial(null);
+								},
+								className: "flex-1 min-h-[48px] rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm cursor-pointer",
+								children: "بله، حذف شود"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => setConfirmDeleteMaterial(null),
 								className: "flex-1 min-h-[48px] rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm cursor-pointer",
 								children: "انصراف"
 							})]
@@ -40813,6 +41742,8 @@ var KEYS = {
 	SAVED_ESTIMATES: "bannasanj_saved_estimates_v1",
 	PRICE_PROFILE: "bannasanj_price_profile_v1",
 	PRESET_OVERRIDES: "bannasanj_preset_overrides_v1",
+	USER_MATERIALS: "bannasanj_user_materials_v1",
+	MATERIAL_USAGE: "bannasanj_material_usage_v1",
 	DEFAULT_MORTAR: "bannasanj_default_mortar_v1",
 	ACTIVE_DRAFT: "bannasanj_active_draft_v1"
 };
@@ -40855,6 +41786,53 @@ function mirrorToIndexedDB(key, value) {
 			req.result.transaction(IDB_STORE, "readwrite").objectStore(IDB_STORE).put(value, key);
 		};
 	} catch {}
+}
+function loadUserMaterials() {
+	const list = safeReadJson(KEYS.USER_MATERIALS, []);
+	if (!Array.isArray(list)) return [];
+	return list.filter((item) => item && typeof item.id === "string" && !BUILT_IN_IDS.has(item.id)).map((item) => ({
+		...item,
+		isBuiltIn: false
+	}));
+}
+function saveUserMaterial(material) {
+	const current = loadUserMaterials();
+	const safeItem = {
+		...material,
+		isBuiltIn: false
+	};
+	const idx = current.findIndex((m) => m.id === safeItem.id);
+	const next = idx >= 0 ? current.map((m, i) => i === idx ? safeItem : m) : [safeItem, ...current];
+	safeWriteJson(KEYS.USER_MATERIALS, next);
+	mirrorToIndexedDB(KEYS.USER_MATERIALS, next);
+	return next;
+}
+/**
+* Deletes ONLY user-defined materials. Strictly refuses to delete built-in presets.
+*/
+function deleteUserMaterial(materialId) {
+	if (BUILT_IN_IDS.has(materialId)) return loadUserMaterials();
+	const next = loadUserMaterials().filter((m) => m.id !== materialId);
+	safeWriteJson(KEYS.USER_MATERIALS, next);
+	mirrorToIndexedDB(KEYS.USER_MATERIALS, next);
+	return next;
+}
+function loadMaterialUsageStats() {
+	return safeReadJson(KEYS.MATERIAL_USAGE, {});
+}
+function recordMaterialUsage(materialId) {
+	const stats = loadMaterialUsageStats();
+	const prev = stats[materialId]?.count ?? 0;
+	const next = {
+		...stats,
+		[materialId]: {
+			count: prev + 1,
+			lastUsedAt: (/* @__PURE__ */ new Date()).toISOString()
+		}
+	};
+	safeWriteJson(KEYS.MATERIAL_USAGE, next);
+	mirrorToIndexedDB(KEYS.MATERIAL_USAGE, next);
+	return next;
 }
 function loadSavedEstimates() {
 	const list = safeReadJson(KEYS.SAVED_ESTIMATES, []);
@@ -40930,17 +41908,27 @@ function loadDefaultMortarSettings() {
 function saveDefaultMortarSettings(settings) {
 	safeWriteJson(KEYS.DEFAULT_MORTAR, settings);
 }
-function createInitialDraft(mortarDefaults = loadDefaultMortarSettings(), overrides = loadPresetOverrides()) {
-	const firstPreset = MATERIAL_PRESETS[0];
-	const dims = overrides[firstPreset.id] ?? firstPreset.actualCm;
+function createInitialDraft(mortarDefaults = loadDefaultMortarSettings(), overrides = loadPresetOverrides(), userMaterials = loadUserMaterials(), usageStats = loadMaterialUsageStats()) {
+	const all = getAllMaterials(userMaterials);
+	let chosen = BUILT_IN_MATERIAL_PRESETS[0];
+	let latestTimestamp = "";
+	for (const mat of all) {
+		const usedAt = usageStats[mat.id]?.lastUsedAt;
+		if (usedAt && usedAt > latestTimestamp) {
+			latestTimestamp = usedAt;
+			chosen = mat;
+		}
+	}
+	const dims = overrides[chosen.id] ?? chosen.actualCm;
 	return {
+		serviceId: "wall-masonry",
 		projectTitle: "",
 		lengthM: "",
 		heightM: "",
-		wallThicknessCm: String(firstPreset.recommendedWallThicknessCm),
+		wallThicknessCm: String(chosen.recommendedWallThicknessCm),
 		openings: [],
-		selectedMaterialId: firstPreset.id,
-		customMaterialName: "مصالح سفارشی",
+		selectedMaterialId: chosen.id,
+		customMaterialName: chosen.name,
 		activeDimensionsCm: {
 			l: String(dims.l),
 			h: String(dims.h),
@@ -40985,14 +41973,16 @@ function App() {
 	const [step, setStep] = (0, import_react.useState)(1);
 	const [defaultMortar, setDefaultMortar] = (0, import_react.useState)(() => loadDefaultMortarSettings());
 	const [presetOverrides, setPresetOverrides] = (0, import_react.useState)(() => loadPresetOverrides());
+	const [userMaterials, setUserMaterials] = (0, import_react.useState)(() => loadUserMaterials());
+	const [usageStats, setUsageStats] = (0, import_react.useState)(() => loadMaterialUsageStats());
 	const [priceProfile, setPriceProfile] = (0, import_react.useState)(() => loadPriceProfile());
 	const [savedEstimates, setSavedEstimates] = (0, import_react.useState)(() => loadSavedEstimates());
 	const [draft, setDraft] = (0, import_react.useState)(() => {
-		return loadActiveDraft() ?? createInitialDraft(loadDefaultMortarSettings(), loadPresetOverrides());
+		return loadActiveDraft() ?? createInitialDraft(loadDefaultMortarSettings(), loadPresetOverrides(), loadUserMaterials(), loadMaterialUsageStats());
 	});
 	const [prices, setPrices] = (0, import_react.useState)(() => {
 		const prof = loadPriceProfile();
-		const initialDraft = loadActiveDraft() ?? createInitialDraft(loadDefaultMortarSettings(), loadPresetOverrides());
+		const initialDraft = loadActiveDraft() ?? createInitialDraft(loadDefaultMortarSettings(), loadPresetOverrides(), loadUserMaterials(), loadMaterialUsageStats());
 		return {
 			pricePerUnit: prof.unitPricesByMaterialId[initialDraft.selectedMaterialId] ?? "",
 			pricePerCementBag: prof.pricePerCementBag ?? "",
@@ -41001,6 +41991,7 @@ function App() {
 		};
 	});
 	const [isCompareOpen, setIsCompareOpen] = (0, import_react.useState)(false);
+	const [isAddMaterialOpen, setIsAddMaterialOpen] = (0, import_react.useState)(false);
 	const [toastMsg, setToastMsg] = (0, import_react.useState)(null);
 	const { isInstallable, isInstalled, isIOS, install } = usePWAInstall();
 	const isOnline = useOnlineStatus();
@@ -41022,8 +42013,8 @@ function App() {
 			pricePerUnit: savedForMaterial
 		}));
 	}, [draft.selectedMaterialId]);
-	const materialPreset = getPresetById(draft.selectedMaterialId);
-	const materialDisplayName = materialPreset.id === "custom" ? draft.customMaterialName.trim() || "مصالح سفارشی" : materialPreset.name;
+	const materialPreset = getMaterialById(draft.selectedMaterialId, userMaterials);
+	const materialDisplayName = draft.selectedMaterialId === "custom" ? draft.customMaterialName.trim() || "مصالح سفارشی" : materialPreset.name;
 	const quantities = (0, import_react.useMemo)(() => {
 		const lengthM = parsePositiveNumber(draft.lengthM);
 		const heightM = parsePositiveNumber(draft.heightM);
@@ -41059,7 +42050,7 @@ function App() {
 	const hasActiveDraft = Boolean(draft.lengthM || draft.heightM);
 	const handleStartNewEstimate = (reset) => {
 		if (reset) {
-			const fresh = createInitialDraft(defaultMortar, presetOverrides);
+			const fresh = createInitialDraft(defaultMortar, presetOverrides, userMaterials, usageStats);
 			setDraft(fresh);
 			setPrices({
 				pricePerUnit: priceProfile.unitPricesByMaterialId[fresh.selectedMaterialId] ?? "",
@@ -41074,6 +42065,48 @@ function App() {
 			top: 0,
 			behavior: "smooth"
 		});
+	};
+	const handleSaveNewMaterial = (newMat) => {
+		const nextUserMaterials = saveUserMaterial(newMat);
+		setUserMaterials(nextUserMaterials);
+		const nextStats = recordMaterialUsage(newMat.id);
+		setUsageStats(nextStats);
+		setDraft((prev) => ({
+			...prev,
+			selectedMaterialId: newMat.id,
+			customMaterialName: newMat.name,
+			wallThicknessCm: String(newMat.recommendedWallThicknessCm),
+			activeDimensionsCm: {
+				l: String(newMat.actualCm.l),
+				h: String(newMat.actualCm.h),
+				t: String(newMat.actualCm.t)
+			}
+		}));
+		showToast(`«${newMat.name}» ذخیره شد و برای دفعات بعد هم در فهرست مصالح شما نمایش داده می‌شود.`);
+	};
+	const handleDeleteUserMaterial = (materialId) => {
+		if (BUILT_IN_IDS.has(materialId)) {
+			showToast("مصالح پیش‌فرض برنامه ثابت هستند و امکان حذف آن‌ها وجود ندارد.");
+			return;
+		}
+		const nextUserMaterials = deleteUserMaterial(materialId);
+		setUserMaterials(nextUserMaterials);
+		if (draft.selectedMaterialId === materialId) {
+			const fallback = BUILT_IN_MATERIAL_PRESETS[0];
+			const fallbackDims = presetOverrides[fallback.id] ?? fallback.actualCm;
+			setDraft((prev) => ({
+				...prev,
+				selectedMaterialId: fallback.id,
+				customMaterialName: fallback.name,
+				wallThicknessCm: String(fallback.recommendedWallThicknessCm),
+				activeDimensionsCm: {
+					l: String(fallbackDims.l),
+					h: String(fallbackDims.h),
+					t: String(fallbackDims.t)
+				}
+			}));
+		}
+		showToast("مصالح سفارشی حذف شد.");
 	};
 	const handlePriceFieldChange = (field, rawValue) => {
 		setPrices((prev) => {
@@ -41116,11 +42149,14 @@ function App() {
 		savePriceProfile(nextProfile);
 	};
 	const handleSwitchPrimaryMaterial = (presetId) => {
-		const preset = getPresetById(presetId);
+		const preset = getMaterialById(presetId, userMaterials);
 		const dims = presetOverrides[preset.id] ?? preset.actualCm;
+		const nextStats = recordMaterialUsage(preset.id);
+		setUsageStats(nextStats);
 		setDraft((prev) => ({
 			...prev,
 			selectedMaterialId: preset.id,
+			customMaterialName: preset.name,
 			wallThicknessCm: String(preset.recommendedWallThicknessCm),
 			activeDimensionsCm: {
 				l: String(dims.l),
@@ -41151,6 +42187,7 @@ function App() {
 			costs
 		});
 		setSavedEstimates(updatedList);
+		setUsageStats(recordMaterialUsage(draft.selectedMaterialId));
 		setDraft((prev) => ({
 			...prev,
 			id: recordId,
@@ -41199,13 +42236,13 @@ function App() {
 									type: "button",
 									onClick: () => setActiveTab("home"),
 									className: `py-1 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${activeTab === "home" ? "text-blue-700 underline underline-offset-8 decoration-2" : "hover:text-slate-900"}`,
-									children: "خانه"
+									children: "خدمات بنّایی"
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									type: "button",
 									onClick: () => setActiveTab("estimate"),
 									className: `py-1 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${activeTab === "estimate" ? "text-blue-700 underline underline-offset-8 decoration-2" : "hover:text-slate-900"}`,
-									children: "محاسبه جدید"
+									children: "دیوارکشی"
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 									type: "button",
@@ -41232,7 +42269,7 @@ function App() {
 								type: "button",
 								onClick: () => handleStartNewEstimate(true),
 								className: "min-h-[40px] px-4 py-2 rounded-xl bg-blue-700 hover:bg-blue-600 text-white text-xs font-bold whitespace-nowrap shrink-0 cursor-pointer",
-								children: "محاسبه جدید"
+								children: "دیوارکشی جدید"
 							})
 						})
 					]
@@ -41248,11 +42285,13 @@ function App() {
 					activeTab === "home" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeScreen, {
 						savedEstimates,
 						priceProfile,
+						userMaterials,
 						hasActiveDraft,
 						onStartNewEstimate: handleStartNewEstimate,
 						onOpenSavedList: () => setActiveTab("saved"),
 						onOpenSavedEstimate: handleOpenSavedEstimate,
 						onOpenPriceProfile: () => setActiveTab("settings"),
+						onOpenAddMaterialModal: () => setIsAddMaterialOpen(true),
 						isInstallable,
 						isInstalled,
 						isIOS,
@@ -41296,8 +42335,16 @@ function App() {
 								children: [
 									step === 1 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DimensionsStep, {
 										draft,
+										userMaterials,
 										presetOverrides,
 										onChangeDraft: setDraft,
+										onBackToServices: () => {
+											setActiveTab("home");
+											window.scrollTo({
+												top: 0,
+												behavior: "smooth"
+											});
+										},
 										onNextStep: () => {
 											setStep(2);
 											window.scrollTo({
@@ -41308,6 +42355,8 @@ function App() {
 									}),
 									step === 2 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaterialStep, {
 										draft,
+										userMaterials,
+										usageStats,
 										presetOverrides,
 										onChangeDraft: setDraft,
 										onSavePresetOverride: (presetId, dims) => {
@@ -41318,6 +42367,8 @@ function App() {
 											const next = resetPresetOverride(presetId);
 											setPresetOverrides(next);
 										},
+										onOpenAddMaterialModal: () => setIsAddMaterialOpen(true),
+										onDeleteUserMaterial: handleDeleteUserMaterial,
 										onBack: () => {
 											setStep(1);
 											window.scrollTo({
@@ -41326,6 +42377,7 @@ function App() {
 											});
 										},
 										onNext: () => {
+											setUsageStats(recordMaterialUsage(draft.selectedMaterialId));
 											setStep(3);
 											window.scrollTo({
 												top: 0,
@@ -41406,6 +42458,7 @@ function App() {
 								className: "hidden lg:block lg:col-span-5",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DesktopSummaryRail, {
 									draft,
+									materialPreset,
 									materialDisplayName,
 									unitLabel: materialPreset.unitLabel,
 									step,
@@ -41423,6 +42476,7 @@ function App() {
 					}),
 					activeTab === "settings" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SettingsScreen, {
 						priceProfile,
+						userMaterials,
 						defaultMortar,
 						onUpdatePriceProfile: (next) => {
 							setPriceProfile(next);
@@ -41437,6 +42491,8 @@ function App() {
 							setDefaultMortar(next);
 							saveDefaultMortarSettings(next);
 						},
+						onOpenAddMaterialModal: () => setIsAddMaterialOpen(true),
+						onDeleteUserMaterial: handleDeleteUserMaterial,
 						isInstallable,
 						isInstalled,
 						isIOS,
@@ -41445,10 +42501,17 @@ function App() {
 					})
 				]
 			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AddMaterialModal, {
+				isOpen: isAddMaterialOpen,
+				onClose: () => setIsAddMaterialOpen(false),
+				onSaveNewMaterial: handleSaveNewMaterial
+			}),
 			quantities && costs && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CompareModal, {
 				isOpen: isCompareOpen,
 				onClose: () => setIsCompareOpen(false),
 				draft,
+				userMaterials,
+				primaryPreset: materialPreset,
 				primaryMaterialName: materialDisplayName,
 				primaryQuantities: quantities,
 				primaryCosts: costs,
@@ -41473,7 +42536,7 @@ function App() {
 						className: `min-h-[48px] flex flex-col items-center justify-center gap-0.5 transition cursor-pointer ${activeTab === "home" ? "text-blue-700 font-bold" : "text-slate-500 font-medium"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(House, { className: "w-5 h-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-[11px] whitespace-nowrap",
-							children: "خانه"
+							children: "خدمات"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
@@ -41482,7 +42545,7 @@ function App() {
 						className: `min-h-[48px] flex flex-col items-center justify-center gap-0.5 transition cursor-pointer ${activeTab === "estimate" ? "text-blue-700 font-bold" : "text-slate-500 font-medium"}`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "w-5 h-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-[11px] whitespace-nowrap",
-							children: "محاسبه جدید"
+							children: "دیوارکشی"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {

@@ -1,4 +1,4 @@
-export type MaterialCategory = 'brick' | 'block' | 'custom';
+export type MaterialCategory = 'brick' | 'block';
 
 export interface DimensionsCm {
   l: number; // طول (سانتی‌متر)
@@ -11,11 +11,19 @@ export interface MaterialPreset {
   name: string;
   shortName: string;
   category: MaterialCategory;
-  unitLabel: 'آجر' | 'بلوک' | 'واحد';
+  unitLabel: 'آجر' | 'بلوک';
   nominalCm: DimensionsCm;
   actualCm: DimensionsCm;
   recommendedWallThicknessCm: number;
   subtitle: string;
+  isBuiltIn: boolean;
+  customImageDataUrl?: string;
+  createdAt?: string;
+}
+
+export interface MaterialUsageRecord {
+  count: number;
+  lastUsedAt: string;
 }
 
 export interface OpeningItem {
@@ -29,6 +37,7 @@ export type MixRatioValue = 4 | 5 | 6;
 
 export interface EstimateDraft {
   id?: string;
+  serviceId?: string;
   projectTitle: string;
   lengthM: string;
   heightM: string;
@@ -111,6 +120,15 @@ export interface SavedEstimate {
   prices: PriceStrings;
   quantities: CalculationResult;
   costs: CostResult;
+}
+
+export interface ConstructionServiceDef {
+  id: string;
+  title: string;
+  shortDesc: string;
+  upcomingDetails: string;
+  isActive: boolean;
+  phaseLabel: string;
 }
 
 export type AppTab = 'home' | 'estimate' | 'saved' | 'settings';

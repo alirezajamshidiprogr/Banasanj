@@ -1,0 +1,9 @@
+{
+  "appId": "ir.bannasanj.app",
+  "appName": "بناسنج",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#F8FAFC"
+  }
+}

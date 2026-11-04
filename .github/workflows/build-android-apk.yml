@@ -25,27 +25,47 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Accept Pre-installed Android SDK Licenses
+        run: |
+          SDK_DIR="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          if [ -n "$SDK_DIR" ] && [ -x "$SDK_DIR/cmdline-tools/latest/bin/sdkmanager" ]; then
+            set +o pipefail
+            yes | "$SDK_DIR/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null 2>&1 || true
+            "$SDK_DIR/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0" > /dev/null 2>&1 || true
+          fi
 
-      - name: Accept Android SDK Licenses
-        run: yes | sdkmanager --licenses > /dev/null || true
-
-      - name: Install dependencies and sync Android assets
+      - name: Install Dependencies, Build Web & Generate Fresh Android Project
         run: |
           npm install --legacy-peer-deps
-          npm run build
-          if [ ! -f "android/gradle/wrapper/gradle-wrapper.jar" ]; then
-            rm -rf android
-            npx cap add android
+          if ! grep -q "@capacitor/android" package.json; then
+            npm install --legacy-peer-deps @capacitor/core @capacitor/android @capacitor/filesystem @capacitor/share
+            npm install -D --legacy-peer-deps @capacitor/cli
           fi
+          rm -f capacitor.config.ts
+          cat > capacitor.config.json << 'EOF'
+          {
+            "appId": "ir.bannasanj.app",
+            "appName": "بناسنج",
+            "webDir": "dist",
+            "android": {
+              "allowMixedContent": false,
+              "backgroundColor": "#F8FAFC"
+            }
+          }
+          EOF
+          npm run build
+          rm -rf android
+          npx cap add android
           npx cap sync android
+          if [ -f "scripts/generate-android-icons.cjs" ]; then
+            node scripts/generate-android-icons.cjs
+          fi
 
-      - name: Build Android APK with Gradle
+      - name: Compile Android Debug APK with Gradle
         working-directory: ./android
         run: |
           chmod +x ./gradlew
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug --no-daemon --stacktrace
           cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/BannaSanj-v1.0.apk
 
       - name: Upload Ready-to-Install APK

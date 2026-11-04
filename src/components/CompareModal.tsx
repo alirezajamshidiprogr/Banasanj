@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import {Check, X} from 'lucide-react';
 import {
+  getAllMaterials,
   getDefaultAlternativeMaterialId,
-  getPresetById,
-  MATERIAL_PRESETS,
+  getMaterialById,
 } from '../constants/materials';
 import type {
   CalculationResult,
   CostResult,
   DimensionsCm,
   EstimateDraft,
+  MaterialPreset,
   PriceStrings,
   SavedPriceProfile,
 } from '../types';
@@ -22,11 +23,14 @@ import {
   parsePositiveNumber,
   sanitizePriceInput,
 } from '../utils/formatters';
+import {MaterialThumbnail} from './MaterialThumbnail';
 
 interface CompareModalProps {
   isOpen: boolean;
   onClose: () => void;
   draft: EstimateDraft;
+  userMaterials: MaterialPreset[];
+  primaryPreset: MaterialPreset;
   primaryMaterialName: string;
   primaryQuantities: CalculationResult;
   primaryCosts: CostResult;
@@ -41,6 +45,8 @@ export const CompareModal: React.FC<CompareModalProps> = ({
   isOpen,
   onClose,
   draft,
+  userMaterials,
+  primaryPreset,
   primaryMaterialName,
   primaryQuantities,
   primaryCosts,
@@ -51,20 +57,19 @@ export const CompareModal: React.FC<CompareModalProps> = ({
   onSwitchPrimaryMaterial,
 }) => {
   const [altId, setAltId] = useState<string>(() =>
-    getDefaultAlternativeMaterialId(draft.selectedMaterialId)
+    getDefaultAlternativeMaterialId(draft.selectedMaterialId, userMaterials)
   );
 
   if (!isOpen) return null;
 
-  const availablePresets = MATERIAL_PRESETS.filter(
-    (m) => m.id !== 'custom' && m.id !== draft.selectedMaterialId
-  );
+  const allMaterials = getAllMaterials(userMaterials);
+  const availablePresets = allMaterials.filter((m) => m.id !== draft.selectedMaterialId);
   const effectiveAltId =
-    altId === draft.selectedMaterialId
-      ? getDefaultAlternativeMaterialId(draft.selectedMaterialId)
+    altId === draft.selectedMaterialId || !allMaterials.some((m) => m.id === altId)
+      ? getDefaultAlternativeMaterialId(draft.selectedMaterialId, userMaterials)
       : altId;
 
-  const altPreset = getPresetById(effectiveAltId);
+  const altPreset = getMaterialById(effectiveAltId, userMaterials);
   const altDims = presetOverrides[altPreset.id] ?? altPreset.actualCm;
 
   const lengthNum = parsePositiveNumber(draft.lengthM) ?? 0;
@@ -181,10 +186,29 @@ export const CompareModal: React.FC<CompareModalProps> = ({
 
           {/* Side-by-Side Comparison Table */}
           <div className="rounded-2xl border border-slate-200 overflow-hidden tabular-nums-fa">
-            <div className="grid grid-cols-3 bg-slate-900 text-white text-xs sm:text-sm font-bold p-3.5 gap-2">
+            <div className="grid grid-cols-3 items-center bg-slate-900 text-white text-xs sm:text-sm font-bold p-3.5 gap-2">
               <div>شاخص</div>
-              <div className="text-center">{primaryMaterialName}</div>
-              <div className="text-center text-blue-300">{altPreset.name}</div>
+              <div className="text-center flex flex-col items-center gap-1.5">
+                <MaterialThumbnail
+                  material={{
+                    ...primaryPreset,
+                    name: primaryMaterialName,
+                    thicknessCm: primaryQuantities.unitTM * 100,
+                  }}
+                  sizeClass="w-11 h-11 rounded-xl"
+                />
+                <span>{primaryMaterialName}</span>
+              </div>
+              <div className="text-center text-blue-300 flex flex-col items-center gap-1.5">
+                <MaterialThumbnail
+                  material={{
+                    ...altPreset,
+                    thicknessCm: altDims.t,
+                  }}
+                  sizeClass="w-11 h-11 rounded-xl"
+                />
+                <span>{altPreset.name}</span>
+              </div>
             </div>
 
             <div className="divide-y divide-slate-200 text-sm">

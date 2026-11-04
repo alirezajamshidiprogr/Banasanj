@@ -7,6 +7,7 @@ import {
   Settings,
   WifiOff,
 } from 'lucide-react';
+import {AddMaterialModal} from './components/AddMaterialModal';
 import {CompareModal} from './components/CompareModal';
 import {DesktopSummaryRail} from './components/DesktopSummaryRail';
 import {DimensionsStep} from './components/DimensionsStep';
@@ -17,13 +18,19 @@ import {PricingStep} from './components/PricingStep';
 import {ResultsStep} from './components/ResultsStep';
 import {SavedScreen} from './components/SavedScreen';
 import {SettingsScreen} from './components/SettingsScreen';
-import {getPresetById} from './constants/materials';
+import {
+  BUILT_IN_IDS,
+  BUILT_IN_MATERIAL_PRESETS,
+  getMaterialById,
+} from './constants/materials';
 import {useOnlineStatus, usePWAInstall} from './hooks/usePWA';
 import type {
   AppTab,
   DimensionsCm,
   EstimateDraft,
   EstimateStep,
+  MaterialPreset,
+  MaterialUsageRecord,
   PriceStrings,
   SavedEstimate,
   SavedPriceProfile,
@@ -34,17 +41,22 @@ import {
   clearPriceProfile,
   createInitialDraft,
   deleteEstimateRecord,
+  deleteUserMaterial,
   loadActiveDraft,
   loadDefaultMortarSettings,
+  loadMaterialUsageStats,
   loadPresetOverrides,
   loadPriceProfile,
   loadSavedEstimates,
+  loadUserMaterials,
+  recordMaterialUsage,
   resetPresetOverride,
   saveActiveDraft,
   saveDefaultMortarSettings,
   saveEstimateRecord,
   savePresetOverride,
   savePriceProfile,
+  saveUserMaterial,
   type DefaultMortarSettings,
 } from './utils/storage';
 
@@ -66,6 +78,12 @@ export default function App() {
   const [presetOverrides, setPresetOverrides] = useState<Record<string, DimensionsCm>>(() =>
     loadPresetOverrides()
   );
+  const [userMaterials, setUserMaterials] = useState<MaterialPreset[]>(() =>
+    loadUserMaterials()
+  );
+  const [usageStats, setUsageStats] = useState<Record<string, MaterialUsageRecord>>(() =>
+    loadMaterialUsageStats()
+  );
   const [priceProfile, setPriceProfile] = useState<SavedPriceProfile>(() => loadPriceProfile());
   const [savedEstimates, setSavedEstimates] = useState<SavedEstimate[]>(() =>
     loadSavedEstimates()
@@ -73,14 +91,28 @@ export default function App() {
 
   const [draft, setDraft] = useState<EstimateDraft>(() => {
     const existing = loadActiveDraft();
-    return existing ?? createInitialDraft(loadDefaultMortarSettings(), loadPresetOverrides());
+    return (
+      existing ??
+      createInitialDraft(
+        loadDefaultMortarSettings(),
+        loadPresetOverrides(),
+        loadUserMaterials(),
+        loadMaterialUsageStats()
+      )
+    );
   });
 
   // Current estimate's unit prices — initialized from saved user profile if user entered prices previously, otherwise strictly empty ""
   const [prices, setPrices] = useState<PriceStrings>(() => {
     const prof = loadPriceProfile();
     const initialDraft =
-      loadActiveDraft() ?? createInitialDraft(loadDefaultMortarSettings(), loadPresetOverrides());
+      loadActiveDraft() ??
+      createInitialDraft(
+        loadDefaultMortarSettings(),
+        loadPresetOverrides(),
+        loadUserMaterials(),
+        loadMaterialUsageStats()
+      );
     return {
       pricePerUnit: prof.unitPricesByMaterialId[initialDraft.selectedMaterialId] ?? '',
       pricePerCementBag: prof.pricePerCementBag ?? '',
@@ -90,6 +122,7 @@ export default function App() {
   });
 
   const [isCompareOpen, setIsCompareOpen] = useState(false);
+  const [isAddMaterialOpen, setIsAddMaterialOpen] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
 
   const {isInstallable, isInstalled, isIOS, install} = usePWAInstall();
@@ -119,9 +152,9 @@ export default function App() {
     }));
   }, [draft.selectedMaterialId]);
 
-  const materialPreset = getPresetById(draft.selectedMaterialId);
+  const materialPreset = getMaterialById(draft.selectedMaterialId, userMaterials);
   const materialDisplayName =
-    materialPreset.id === 'custom'
+    draft.selectedMaterialId === 'custom'
       ? draft.customMaterialName.trim() || 'مصالح سفارشی'
       : materialPreset.name;
 
@@ -184,7 +217,12 @@ export default function App() {
 
   const handleStartNewEstimate = (reset: boolean) => {
     if (reset) {
-      const fresh = createInitialDraft(defaultMortar, presetOverrides);
+      const fresh = createInitialDraft(
+        defaultMortar,
+        presetOverrides,
+        userMaterials,
+        usageStats
+      );
       setDraft(fresh);
       setPrices({
         pricePerUnit: priceProfile.unitPricesByMaterialId[fresh.selectedMaterialId] ?? '',
@@ -196,6 +234,55 @@ export default function App() {
     }
     setActiveTab('estimate');
     window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
+  const handleSaveNewMaterial = (newMat: MaterialPreset) => {
+    const nextUserMaterials = saveUserMaterial(newMat);
+    setUserMaterials(nextUserMaterials);
+    const nextStats = recordMaterialUsage(newMat.id);
+    setUsageStats(nextStats);
+
+    setDraft((prev) => ({
+      ...prev,
+      selectedMaterialId: newMat.id,
+      customMaterialName: newMat.name,
+      wallThicknessCm: String(newMat.recommendedWallThicknessCm),
+      activeDimensionsCm: {
+        l: String(newMat.actualCm.l),
+        h: String(newMat.actualCm.h),
+        t: String(newMat.actualCm.t),
+      },
+    }));
+
+    showToast(`«${newMat.name}» ذخیره شد و برای دفعات بعد هم در فهرست مصالح شما نمایش داده می‌شود.`);
+  };
+
+  const handleDeleteUserMaterial = (materialId: string) => {
+    if (BUILT_IN_IDS.has(materialId)) {
+      showToast('مصالح پیش‌فرض برنامه ثابت هستند و امکان حذف آن‌ها وجود ندارد.');
+      return;
+    }
+
+    const nextUserMaterials = deleteUserMaterial(materialId);
+    setUserMaterials(nextUserMaterials);
+
+    if (draft.selectedMaterialId === materialId) {
+      const fallback = BUILT_IN_MATERIAL_PRESETS[0];
+      const fallbackDims = presetOverrides[fallback.id] ?? fallback.actualCm;
+      setDraft((prev) => ({
+        ...prev,
+        selectedMaterialId: fallback.id,
+        customMaterialName: fallback.name,
+        wallThicknessCm: String(fallback.recommendedWallThicknessCm),
+        activeDimensionsCm: {
+          l: String(fallbackDims.l),
+          h: String(fallbackDims.h),
+          t: String(fallbackDims.t),
+        },
+      }));
+    }
+
+    showToast('مصالح سفارشی حذف شد.');
   };
 
   const handlePriceFieldChange = (field: keyof PriceStrings, rawValue: string) => {
@@ -243,11 +330,14 @@ export default function App() {
   };
 
   const handleSwitchPrimaryMaterial = (presetId: string) => {
-    const preset = getPresetById(presetId);
+    const preset = getMaterialById(presetId, userMaterials);
     const dims = presetOverrides[preset.id] ?? preset.actualCm;
+    const nextStats = recordMaterialUsage(preset.id);
+    setUsageStats(nextStats);
     setDraft((prev) => ({
       ...prev,
       selectedMaterialId: preset.id,
+      customMaterialName: preset.name,
       wallThicknessCm: String(preset.recommendedWallThicknessCm),
       activeDimensionsCm: {
         l: String(dims.l),
@@ -283,6 +373,7 @@ export default function App() {
 
     const updatedList = saveEstimateRecord(record);
     setSavedEstimates(updatedList);
+    setUsageStats(recordMaterialUsage(draft.selectedMaterialId));
     setDraft((prev) => ({...prev, id: recordId, projectTitle: autoTitle}));
     showToast('پروژه با موفقیت در لیست ذخیره‌شده‌ها ثبت شد.');
   };
@@ -336,7 +427,7 @@ export default function App() {
                   : 'hover:text-slate-900'
               }`}
             >
-              خانه
+              خدمات بنّایی
             </button>
             <button
               type="button"
@@ -347,7 +438,7 @@ export default function App() {
                   : 'hover:text-slate-900'
               }`}
             >
-              محاسبه جدید
+              دیوارکشی
             </button>
             <button
               type="button"
@@ -390,7 +481,7 @@ export default function App() {
                 onClick={() => handleStartNewEstimate(true)}
                 className="min-h-[40px] px-4 py-2 rounded-xl bg-blue-700 hover:bg-blue-600 text-white text-xs font-bold whitespace-nowrap shrink-0 cursor-pointer"
               >
-                محاسبه جدید
+                دیوارکشی جدید
               </button>
             )}
           </div>
@@ -411,11 +502,13 @@ export default function App() {
           <HomeScreen
             savedEstimates={savedEstimates}
             priceProfile={priceProfile}
+            userMaterials={userMaterials}
             hasActiveDraft={hasActiveDraft}
             onStartNewEstimate={handleStartNewEstimate}
             onOpenSavedList={() => setActiveTab('saved')}
             onOpenSavedEstimate={handleOpenSavedEstimate}
             onOpenPriceProfile={() => setActiveTab('settings')}
+            onOpenAddMaterialModal={() => setIsAddMaterialOpen(true)}
             isInstallable={isInstallable}
             isInstalled={isInstalled}
             isIOS={isIOS}
@@ -466,8 +559,13 @@ export default function App() {
                 {step === 1 && (
                   <DimensionsStep
                     draft={draft}
+                    userMaterials={userMaterials}
                     presetOverrides={presetOverrides}
                     onChangeDraft={setDraft}
+                    onBackToServices={() => {
+                      setActiveTab('home');
+                      window.scrollTo({top: 0, behavior: 'smooth'});
+                    }}
                     onNextStep={() => {
                       setStep(2);
                       window.scrollTo({top: 0, behavior: 'smooth'});
@@ -478,6 +576,8 @@ export default function App() {
                 {step === 2 && (
                   <MaterialStep
                     draft={draft}
+                    userMaterials={userMaterials}
+                    usageStats={usageStats}
                     presetOverrides={presetOverrides}
                     onChangeDraft={setDraft}
                     onSavePresetOverride={(presetId, dims) => {
@@ -488,11 +588,14 @@ export default function App() {
                       const next = resetPresetOverride(presetId);
                       setPresetOverrides(next);
                     }}
+                    onOpenAddMaterialModal={() => setIsAddMaterialOpen(true)}
+                    onDeleteUserMaterial={handleDeleteUserMaterial}
                     onBack={() => {
                       setStep(1);
                       window.scrollTo({top: 0, behavior: 'smooth'});
                     }}
                     onNext={() => {
+                      setUsageStats(recordMaterialUsage(draft.selectedMaterialId));
                       setStep(3);
                       window.scrollTo({top: 0, behavior: 'smooth'});
                     }}
@@ -567,6 +670,7 @@ export default function App() {
               <div className="hidden lg:block lg:col-span-5">
                 <DesktopSummaryRail
                   draft={draft}
+                  materialPreset={materialPreset}
                   materialDisplayName={materialDisplayName}
                   unitLabel={materialPreset.unitLabel}
                   step={step}
@@ -590,6 +694,7 @@ export default function App() {
         {activeTab === 'settings' && (
           <SettingsScreen
             priceProfile={priceProfile}
+            userMaterials={userMaterials}
             defaultMortar={defaultMortar}
             onUpdatePriceProfile={(next) => {
               setPriceProfile(next);
@@ -604,6 +709,8 @@ export default function App() {
               setDefaultMortar(next);
               saveDefaultMortarSettings(next);
             }}
+            onOpenAddMaterialModal={() => setIsAddMaterialOpen(true)}
+            onDeleteUserMaterial={handleDeleteUserMaterial}
             isInstallable={isInstallable}
             isInstalled={isInstalled}
             isIOS={isIOS}
@@ -613,12 +720,21 @@ export default function App() {
         )}
       </main>
 
+      {/* Persistent User Material Modal */}
+      <AddMaterialModal
+        isOpen={isAddMaterialOpen}
+        onClose={() => setIsAddMaterialOpen(false)}
+        onSaveNewMaterial={handleSaveNewMaterial}
+      />
+
       {/* Compare Mode Modal */}
       {quantities && costs && (
         <CompareModal
           isOpen={isCompareOpen}
           onClose={() => setIsCompareOpen(false)}
           draft={draft}
+          userMaterials={userMaterials}
+          primaryPreset={materialPreset}
           primaryMaterialName={materialDisplayName}
           primaryQuantities={quantities}
           primaryCosts={costs}
@@ -640,7 +756,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Mobile Bottom Tab Navigation: خانه، محاسبه جدید، ذخیره‌شده‌ها، تنظیمات */}
+      {/* Mobile Bottom Tab Navigation: خدمات، دیوارکشی، ذخیره‌شده‌ها، تنظیمات */}
       <nav
         aria-label="ناوبری اصلی"
         className="md:hidden fixed bottom-0 left-0 right-0 z-40 h-16 bg-white/95 backdrop-blur-md border-t border-slate-200 grid grid-cols-4 items-center"
@@ -653,7 +769,7 @@ export default function App() {
           }`}
         >
           <Home className="w-5 h-5" />
-          <span className="text-[11px] whitespace-nowrap">خانه</span>
+          <span className="text-[11px] whitespace-nowrap">خدمات</span>
         </button>
 
         <button
@@ -664,7 +780,7 @@ export default function App() {
           }`}
         >
           <Calculator className="w-5 h-5" />
-          <span className="text-[11px] whitespace-nowrap">محاسبه جدید</span>
+          <span className="text-[11px] whitespace-nowrap">دیوارکشی</span>
         </button>
 
         <button

@@ -10,13 +10,12 @@ import {MANDATORY_DISCLAIMER} from '../constants/materials';
 import type {CalculationResult, EstimateDraft, MaterialPreset} from '../types';
 import {formatFaNumber} from '../utils/formatters';
 import {
-  BlockIcon,
-  BrickIcon,
   CementBagIcon,
   MortarTubIcon,
   SandPileIcon,
   WallAreaIcon,
 } from './MaterialIcons';
+import {MaterialThumbnail} from './MaterialThumbnail';
 
 interface ResultsStepProps {
   draft: EstimateDraft;
@@ -58,15 +57,16 @@ export const ResultsStep: React.FC<ResultsStepProps> = ({
 
       {/* Big Quantity Cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* 1. Brick / Block Count */}
+        {/* 1. Brick / Block Count (with real material photo) */}
         <div className="rounded-2xl bg-white border border-slate-200 p-5 flex items-start gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
-            {materialPreset.category === 'block' ? (
-              <BlockIcon className="w-7 h-7" />
-            ) : (
-              <BrickIcon className="w-7 h-7" />
-            )}
-          </div>
+          <MaterialThumbnail
+            material={{
+              ...materialPreset,
+              name: materialDisplayName,
+              thicknessCm: quantities.unitTM * 100,
+            }}
+            sizeClass="w-14 h-14 rounded-2xl"
+          />
           <div className="min-w-0 tabular-nums-fa">
             <div className="text-sm font-semibold text-slate-600">
               تعداد {materialPreset.unitLabel} مورد نیاز
